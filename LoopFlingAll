@@ -1,0 +1,750 @@
+
+local Players = game:GetService("Players")
+local Me = Players.LocalPlayer
+local NetworkAccess = coroutine.create(function()
+    settings().Physics.AllowSleep = false
+    while game:GetService("RunService").RenderStepped:Wait() do
+        for _, Players in pairs(Players:GetPlayers()) do
+            if Players ~= Me then
+                Players.MaximumSimulationRadius = 0 
+                sethiddenproperty(Players, "SimulationRadius", 0) 
+            end 
+        end
+        Me.MaximumSimulationRadius = math.pow(math.huge,math.huge)
+        setsimulationradius(math.huge) 
+    end 
+end) 
+coroutine.resume(NetworkAccess)
+local Equasym = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Rams = Instance.new("Folder")
+local RS = Instance.new("Frame")
+local LS = Instance.new("Frame")
+local MD = Instance.new("Frame")
+local MU = Instance.new("Frame")
+local UIGradient = Instance.new("UIGradient")
+local Welcome = Instance.new("TextLabel")
+local info = Instance.new("TextLabel")
+local close = Instance.new("ImageButton")
+local done = Instance.new("ImageButton")
+local hourglass_full = Instance.new("ImageButton")
+local Button = Instance.new("ImageButton")
+local TextLabel = Instance.new("TextLabel")
+local Checking = Instance.new("TextLabel")
+local discord = Instance.new("TextLabel")
+local blur = Instance.new("BlurEffect", game.Lighting)
+local ts = game:GetService("TweenService")
+local tv = TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0)
+local ts = game:GetService("TweenService")
+local ti = TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, 0, false, 0)
+rainbowing = false
+Frame.Position = UDim2.new(0.5, 0, 0, 0)
+Frame.AnchorPoint = Vector2.new(0.5, 0.5)
+blur.Size = 0
+hourglass_full.ImageColor3 = Color3.fromRGB(255, 255, 0)
+function rot(kj)
+    local h24 = coroutine.create(function()
+        local h25 = TweenInfo.new(0.4, Enum.PoseEasingStyle.Bounce, Enum.EasingDirection.Out, 0, false, 0)
+        local p = {
+            Rotation = kj.Rotation + 360
+        }
+        local mv = ts:Create(kj, h25, p)
+        mv:Play()
+    end)
+    coroutine.resume(h24)
+end
+function uhoh(s)
+    local slide = {
+        Position = UDim2.new(0.5, 0, s, 0)
+    }
+    local sliding = ts:Create(Frame, tv, slide)
+    sliding:Play()
+end
+local function blury(v, x)
+    local mb = TweenInfo.new(2, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, 0, false, 0)
+    local prop = {
+        Size = x
+    }
+    local m = ts:Create(v, mb, prop)
+    m:Play()
+end
+function ImgT(v, x)
+    local mb = TweenInfo.new(0.4, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, 0, false, 0)
+    local prop = {
+        ImageTransparency = x
+    }
+    local m = ts:Create(v, mb, prop)
+    m:Play()
+end
+wait(0.3)
+uhoh(0.5)
+Frame.AnchorPoint = Vector2.new(0.5, 0.5)
+Equasym.Name = "Equasym"
+Equasym.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Equasym.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Frame.Parent = Equasym
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.BorderColor3 = Color3.fromRGB(130, 203, 255)
+Frame.BorderSizePixel = 3
+Frame.Position = UDim2.new(0.5, 0, -0.5, 0)
+Frame.Size = UDim2.new(0, 371, 0, 286)
+Rams.Name = "Rams"
+Rams.Parent = Frame
+Frame.Draggable = true
+RS.Name = "RS"
+RS.Parent = Rams
+RS.BackgroundColor3 = Color3.fromRGB(38, 41, 45)
+RS.BorderSizePixel = 0
+RS.Position = UDim2.new(0.973045826, 0, 0, 0)
+RS.Size = UDim2.new(0, 10, 0, 286)
+LS.Name = "LS"
+LS.Parent = Rams
+LS.BackgroundColor3 = Color3.fromRGB(38, 41, 45)
+LS.BorderSizePixel = 0
+LS.Size = UDim2.new(0, 10, 0, 286)
+MD.Name = "MD"
+MD.Parent = Rams
+MD.BackgroundColor3 = Color3.fromRGB(38, 41, 45)
+MD.BorderSizePixel = 0
+MD.Position = UDim2.new(0, 0, 0.965034962, 0)
+MD.Size = UDim2.new(0, 371, 0, 10)
+MU.Name = "MU"
+MU.Parent = Rams
+MU.BackgroundColor3 = Color3.fromRGB(38, 41, 45)
+MU.BorderSizePixel = 0
+MU.Size = UDim2.new(0, 371, 0, 10)
+UIGradient.Color = ColorSequence.new({ColorSequenceKeypoint.new(0.00, Color3.fromRGB(38, 41, 45)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(34, 35, 43))})
+UIGradient.Rotation = -90
+UIGradient.Parent = Frame
+Welcome.Name = "Welcome"
+Welcome.Parent = Frame
+Welcome.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Welcome.BackgroundTransparency = 1.000
+Welcome.Position = UDim2.new(0.172506735, 0, 0.062937066, 0)
+Welcome.Size = UDim2.new(0, 243, 0, 50)
+Welcome.Font = Enum.Font.Arial
+Welcome.Text = ""
+Welcome.TextColor3 = Color3.fromRGB(0, 0, 0)
+Welcome.TextScaled = true
+Welcome.TextSize = 14.000
+Welcome.TextWrapped = true
+info.Name = "info"
+info.Parent = Frame
+info.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+info.BackgroundTransparency = 1.000
+info.Position = UDim2.new(0.172506735, 0, 0.237762243, 0)
+info.Size = UDim2.new(0, 243, 0, 147)
+info.SizeConstraint = Enum.SizeConstraint.RelativeXX
+info.Font = Enum.Font.Arial
+info.Text = ""
+info.TextColor3 = Color3.fromRGB(0, 0, 0)
+info.TextScaled = true
+info.TextSize = 14.000
+info.TextWrapped = true
+info.TextXAlignment = Enum.TextXAlignment.Left
+info.TextYAlignment = Enum.TextYAlignment.Top
+close.Name = "close"
+close.Parent = Frame
+close.BackgroundTransparency = 1.000
+close.Position = UDim2.new(0.787247241, 0, 0.406044394, 0)
+close.Size = UDim2.new(0, 44, 0, 44)
+close.ZIndex = 2
+close.Image = "rbxassetid://3926305904"
+close.ImageRectOffset = Vector2.new(284, 4)
+close.ImageRectSize = Vector2.new(24, 24)
+close.ImageTransparency = 1.000
+done.Name = "done"
+done.Parent = Frame
+done.BackgroundTransparency = 1.000
+done.Position = UDim2.new(0.787247241, 0, 0.406044394, 0)
+done.Size = UDim2.new(0, 44, 0, 44)
+done.ZIndex = 2
+done.Image = "rbxassetid://3926305904"
+done.ImageRectOffset = Vector2.new(644, 204)
+done.ImageRectSize = Vector2.new(36, 36)
+done.ImageTransparency = 1.000
+hourglass_full.Name = "hourglass_full"
+hourglass_full.Parent = Frame
+hourglass_full.BackgroundTransparency = 1.000
+hourglass_full.Position = UDim2.new(0.808, 0, 0.448, 0)
+hourglass_full.Size = UDim2.new(0, 30, 0, 30)
+hourglass_full.ZIndex = 2
+hourglass_full.Image = "rbxassetid://3926305904"
+hourglass_full.ImageRectOffset = Vector2.new(804, 164)
+hourglass_full.ImageRectSize = Vector2.new(36, 36)
+hourglass_full.ImageTransparency = 1.000
+Button.Name = "Button"
+Button.Parent = Frame
+Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Button.BackgroundTransparency = 1.000
+Button.Position = UDim2.new(0.231805921, 0, 0.811188817, 0)
+Button.Size = UDim2.new(0, 200, 0, 40)
+Button.Image = "rbxassetid://2790389767"
+Button.ImageColor3 = Color3.fromRGB(0, 255, 0)
+Button.ImageTransparency = 1.000
+Button.ScaleType = Enum.ScaleType.Slice
+Button.SliceCenter = Rect.new(8, 8, 248, 248)
+TextLabel.Parent = Button
+TextLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.495000005, 0, 0.500000179, 0)
+TextLabel.Size = UDim2.new(1, -5, 1, -5)
+TextLabel.Font = Enum.Font.Arial
+TextLabel.Text = ""
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+Checking.Name = "Checking"
+Checking.Parent = Frame
+Checking.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Checking.BackgroundTransparency = 1.000
+Checking.Position = UDim2.new(0.19137466, 0, 0.405594409, 0)
+Checking.Size = UDim2.new(0, 230, 0, 50)
+Checking.Font = Enum.Font.Arial
+Checking.Text = ""
+Checking.TextColor3 = Color3.fromRGB(0, 0, 0)
+Checking.TextScaled = true
+Checking.TextSize = 14.000
+Checking.TextWrapped = true
+discord.Name = "discord"
+discord.Parent = Frame
+discord.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+discord.BackgroundTransparency = 1.000
+discord.Position = UDim2.new(0.19137466, 0, 0.559440553, 0)
+discord.Size = UDim2.new(0, 230, 0, 50)
+discord.Font = Enum.Font.Arial
+discord.Text = ""
+discord.TextColor3 = Color3.fromRGB(0, 0, 0)
+discord.TextScaled = true
+discord.TextSize = 14.000
+discord.TextWrapped = true
+local Buttonback = Button.Position
+blury(blur, 40)
+local sym = {hourglass_full, close, done}
+function typing(instance, text)
+    for i = 1, #text do
+        instance.Text = text:sub(1, i)
+        wait(0.03)
+    end
+end
+function colors(frame, r, g, b, property)
+    local prop = {
+        [property] = Color3.fromRGB(r, g, b)
+    }
+    local p = ts:Create(frame, ti, prop)
+    p:Play()
+end
+function ColorSymbol(r, g, b)
+    local prop = {
+        ImageColor3 = Color3.fromRGB(r, g, b)
+    }
+    for i, v in pairs(sym) do
+        local zj = ts:Create(v, ti, prop)
+        zj:Play()
+    end
+end
+function color(r, g, b)
+    for _, k in pairs(Rams:GetChildren()) do
+        if k:IsA("Frame") then
+            local prop = {
+                BackgroundColor3 = Color3.fromRGB(r, g, b)
+            }
+            local zxajfa = ts:Create(k, ti, prop)
+            zxajfa:Play()
+        end
+    end
+end
+local function transparent(v, t)
+    local thething = TweenInfo.new(0.5, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0)
+    local prop = {
+        TextTransparency = t
+    }
+    local askjdfal = ts:Create(v, thething, prop)
+    askjdfal:Play()
+end
+function textrainbow()
+    for i, v in pairs(Frame:GetChildren()) do
+        if v:IsA("TextLabel") then
+            local c = coroutine.create(function()
+                while wait() do
+                    colors(v, 255, 0, 0, "TextColor3")
+                    wait(1)
+                    colors(v, 255, 255, 0, "TextColor3")
+                    wait(1)
+                    colors(v, 0, 255, 0, "TextColor3")
+                    wait(1)
+                    colors(v, 0, 255, 255, "TextColor3")
+                    wait(1)
+                    colors(v, 100, 100, 255, "TextColor3")
+                    wait(1)
+                    colors(v, 255, 0, 255, "TextColor3")
+                    wait(1)
+                end
+            end)
+            coroutine.resume(c)
+        end
+    end
+end
+function rainbow()
+    for _, v in pairs(Rams:GetChildren()) do
+        if v:IsA("Frame") then
+            local c = coroutine.create(function()
+                while wait() do
+                    colors(v, 255, 0, 0, "BackgroundColor3")
+                    wait(1)
+                    colors(v, 255, 255, 0, "BackgroundColor3")
+                    wait(1)
+                    colors(v, 0, 255, 0, "BackgroundColor3")
+                    wait(1)
+                    colors(v, 0, 255, 255, "BackgroundColor3")
+                    wait(1)
+                    colors(v, 100, 100, 255, "BackgroundColor3")
+                    wait(1)
+                    colors(v, 255, 0, 255, "BackgroundColor3")
+                    wait(1)
+                end
+            end)
+            coroutine.resume(c)
+        end
+    end
+end
+wait(1)
+typing(Checking, "Loading...")
+colors(Checking, 255, 255, 255, "TextColor3")
+color(255, 255, 255)
+wait(1)
+transparent(Checking, 1)
+wait(0.5)
+Checking.TextTransparency = 0
+typing(Checking, "Loading Complete!")
+rotating = true
+wait(1)
+transparent(Checking, 1)
+wait(0.5)
+Checking.TextTransparency = 0
+typing(Checking, "Checking Whitelist..")
+color(255, 255, 0)
+ColorSymbol(255, 255, 0)
+colors(Checking, 255, 255, 0, "TextColor3")
+rot(hourglass_full)
+transparent()
+ImgT(hourglass_full, 0)
+local rotate = coroutine.create(function()
+    while true do
+        if not rotating then
+            return 
+        end
+        hourglass_full.Rotation = hourglass_full.Rotation + 2
+        wait()
+    end
+end)
+coroutine.resume(rotate)
+wait(2)
+done.ImageColor3 = Color3.fromRGB(0, 255, 0)
+local plr = game.Players.LocalPlayer
+ImgT(hourglass_full, 1)
+color(0, 255, 0)
+local jjke = coroutine.create(function()
+    wait(0.3)
+    ImgT(done, 0)
+    wait(1)
+end)
+coroutine.resume(jjke)
+colors(Checking, 0, 255, 0, "TextColor3")
+typing(Checking, "You're Whitelisted! " .. plr.Name)
+print([["
+
+"]])
+wait(1)
+ImgT(done, 1)
+ColorSymbol(0, 255, 0)
+textrainbow()
+rainbow()
+typing(Welcome, "Completed Loading & Whitelist!")
+typing(Checking, "LoopFlingAll Script! (R6 Only)")
+typing(discord, "Made By Jay_Devv819!")
+ImgT(Button, 0)
+typing(Button.TextLabel, "Remove Gui")
+Button.MouseButton1Click:Connect(function()
+    uhoh(-0.5)
+    blury(blur, 0)
+    Index = 0
+    print("scripted by jay_devv819")
+    Devide = 0
+    x = 360
+    switch = false
+    pbl = Instance.new("NumberValue", game.ReplicatedStorage)
+    off = Instance.new("NumberValue", game.ReplicatedStorage)
+    d = 500
+    prefix = "!"
+    sets = {}
+    sin = Instance.new("NumberValue")
+    sin.Value = 3.14
+    ym = Instance.new("NumberValue")
+    ym.Value = -4
+    rx = Instance.new("NumberValue")
+    ry = Instance.new("NumberValue")
+    rz = Instance.new("NumberValue")
+    tx = Instance.new("NumberValue")
+    ty = Instance.new("NumberValue")
+    tz = Instance.new("NumberValue")
+    pbl.Value = 1
+    off.Value = 1
+    local ts = game:GetService("TweenService")
+    function prop1(i, v)
+        local ti = TweenInfo.new(0.5, Enum.EasingStyle.Back, Enum.EasingDirection.InOut, 0, false, 0)
+        local prop = {
+            Value = v
+        }
+        local aaa = ts:Create(i, ti, prop)
+        aaa:Play()
+    end
+    FoundPlr = true
+    mode1, mode2, mode3, mode4 = true, false, false, false
+    local s = pcall(function()
+        setsimulationradius(1 / 0, 1 / 0)
+    end)
+    duping = false
+    tpback = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    local player = game.Players.LocalPlayer.Name
+    duping = false
+    function gotya(str)
+        local str = str:lower()
+        for i, v in pairs(game.Players:GetChildren()) do
+            if string.find(v.Name:lower(), str) then
+                return v.Name
+            end
+        end
+    end
+    game.Players.LocalPlayer.Chatted:Connect(function(msg)
+        local msg = msg:lower()
+        if msg:sub(1, 7) == "prefix " then
+            prefix = msg:sub(8)
+        end
+        if msg:sub(1, 6) == prefix .. "mode " then
+            if msg:sub(7, 7) == "1" then
+                mode1 = true
+                mode2 = false
+                mode3 = false
+                mode4 = false
+            elseif msg:sub(7, 7) == "2" then
+                mode1 = false
+                mode2 = true
+                mode3 = false
+                mode4 = false
+            elseif msg:sub(7, 7) == "3" then
+                mode1 = false
+                mode2 = false
+                mode3 = true
+                mode4 = false
+            elseif msg:sub(7, 7) == "4" then
+                mode1 = false
+                mode2 = false
+                mode3 = false
+                mode4 = true
+            end
+        end
+        if msg:sub(1, 6) == prefix .. "play " then
+            for i, v in pairs(sets) do
+                v.Remote:FireServer("PlaySong", msg:sub(7))
+            end
+        end
+        if msg:sub(1, 3) == prefix .. "p " then
+            player = gotya(msg:sub(4))
+            print(player)
+            if player == nil then
+                FoundPlr = false
+            else
+                FoundPlr = true
+            end
+        end
+        if msg:sub(1, 5) == prefix .. "pbl " then
+            prop1(pbl, tonumber(msg:sub(6)))
+        end
+        if msg:sub(1, 4) == prefix .. "os " then
+            prop1(off, tonumber(msg:sub(5)))
+        end
+        if msg:sub(1, 3) == prefix .. "d " then
+            d = tonumber(msg:sub(4))
+        end
+        if msg:sub(1, 3) == prefix .. "y " then
+            prop1(ym, tonumber(msg:sub(4)))
+        end
+        if msg:sub(1, 3) == prefix .. "k " then
+            k = tonumber(msg:sub(4))
+        end
+        if msg:sub(1, 4) == prefix .. "rx " then
+            prop1(rx, tonumber(msg:sub(5)))
+        end
+        if msg:sub(1, 4) == prefix .. "ry " then
+            prop1(ry, tonumber(msg:sub(5)))
+        end
+        if msg:sub(1, 4) == prefix .. "rz " then
+            prop1(rz, tonumber(msg:sub(5)))
+        end
+        if msg:sub(1, 4) == prefix .. "tx " then
+            prop1(tx, tonumber(msg:sub(5)))
+        end
+        if msg:sub(1, 4) == prefix .. "ty " then
+            prop1(ty, tonumber(msg:sub(5)))
+        end
+        if msg:sub(1, 4) == prefix .. "tz " then
+            prop1(tz, tonumber(msg:sub(5)))
+        end
+        if msg:sub(1, 5) == prefix .. "sin " then
+            prop1(sin, tonumber(msg:sub(6)))
+        end
+    end)
+    k = 1.1
+    TpBack = CFrame.new()
+    local uis = game:GetService("UserInputService")
+    uis.InputBegan:Connect(function(x, y)
+        if y then
+            return 
+        end
+        if x.KeyCode == Enum.KeyCode.J then
+            if not duping then
+                duping = true
+                tpback = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+            else
+                duping = false
+                wait(6)
+                tpback = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                for i, v in pairs(workspace:GetChildren()) do
+                    if v:IsA("Tool") then
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Handle.CFrame
+                        wait()
+                    end
+                end
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = tpback
+            end
+        end
+        if x.KeyCode == Enum.KeyCode.G then
+            sets = {}
+            for i, v in pairs(sets) do
+                print(v.Name)
+            end
+            for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                table.insert(sets, i, v)
+            end
+            Index = 360 / #game.Players.LocalPlayer.Backpack:GetChildren()
+            game.Players.LocalPlayer.Character.Animate.toolnone.ToolNoneAnim.AnimationId = "0"
+            for i, v in pairs(sets) do
+                if v:IsA("Tool") then
+                    for z, n in pairs(v:GetChildren()) do
+                        if n:IsA("NumberValue") then
+                            n:Destroy()
+                        end
+                    end
+                    for z, n in pairs(v.Handle:GetChildren()) do
+                        if n:IsA("BodyPosition") then
+                            n:Destroy()
+                        end
+                    end
+                    v.Name = "Boombox " .. tostring(i)
+                    local bp = Instance.new("BodyPosition", v.Handle)
+                    local val = Instance.new("NumberValue", v)
+                    local yv = Instance.new("NumberValue", v)
+                    local at1, at2 = Instance.new("Attachment", v.Handle), Instance.new("Attachment", v.Handle)
+                    at1.Position = Vector3.new(-1.4, 0, 0)
+                    at2.Position = Vector3.new(1.4, 0, 0)
+                    v.Changed:Connect(function()
+                        if v.Parent == game.Players.LocalPlayer.Backpack or v.Parent == workspace then
+                            for z, n in pairs(v:GetChildren()) do
+                                if n:IsA("NumberValue") then
+                                    n:Destroy()
+                                end
+                            end
+                            for z, n in pairs(v.Handle:GetChildren()) do
+                                if n:IsA("BodyPosition") then
+                                    n:Destroy()
+                                end
+                            end
+                        end
+                    end)
+                    yv.Value = k
+                    k = yv.Value + k
+                    val.Value = x
+                    x = val.Value - Index
+                    v.Parent = game.Players.LocalPlayer.Character
+                    FoundPlr = true
+                    local OnC = true
+                    game.Players.LocalPlayer.Character.ChildRemoved:Connect(function(c)
+                        if c == v then
+                            OnC = false
+                        end
+                    end)
+                    game:GetService("RunService").RenderStepped:Connect(function()
+                        if not OnC then
+                            return 
+                        end
+                        if not v:FindFirstChild("Handle") then
+                            return 
+                        end
+                        bp.Position = v.Handle.Position
+                        if not FoundPlr then
+                            return 
+                        end
+                        bp.D = d
+                        if mode1 == true then
+                            v.Handle.Position = game.Players[player].Character.Head.Position + Vector3.new(math.sin(math.rad(val.Value) + time() * sin.Value) * off.Value, ym.Value + math.abs(math.sin(yv.Value + time() * math.pi)) * v.Handle.Sound.PlaybackLoudness * 0.005 * pbl.Value, math.cos(math.rad(val.Value) + time() * sin.Value) * off.Value)
+                            if v.Parent == workspace then
+                            else
+                                v.Handle.CFrame = CFrame.new(v.Handle.Position, Vector3.new(game.Players[player].Character.Head.Position.X, game.Players[player].Character.Head.Position.Y - 4, game.Players[player].Character.Head.Position.Z)) * CFrame.Angles(math.rad(rx.Value) + (time() * tx.Value), math.rad(ry.Value) + (time() * ty.Value), math.rad(rz.Value) + (time() * tz.Value))
+                            end
+                        elseif mode2 == true then
+                            v.Handle.Position = game.Players[player].Character.Head.Position + Vector3.new(math.sin(math.rad(val.Value) + time() * sin.Value) * off.Value, ym.Value + math.sin(yv.Value + time() * sin.Value) * v.Handle.Sound.PlaybackLoudness * 0.005 * pbl.Value, math.cos(math.rad(val.Value) + time() * sin.Value) * off.Value)
+                            if v.Parent == workspace or v.Parent.RightHand:FindFirstChild("RightGrip") then
+                            else
+                                v.Handle.CFrame = CFrame.new(v.Handle.Position, Vector3.new(game.Players[player].Character.Head.Position.X, game.Players[player].Character.Head.Position.Y - 4, game.Players[player].Character.Head.Position.Z)) * CFrame.Angles(math.rad(rx.Value) + (time() * tx.Value), math.rad(ry.Value) + (time() * ty.Value), math.rad(rz.Value) + (time() * tz.Value))
+                            end
+                        end
+                    end)
+                    if game.Players[player].Character.Humanoid.RigType == Enum.HumanoidRigType.R15 then
+                        pcall(function()
+                            game.Players[player].Character.RightHand.RightGrip:Destroy()
+                        end)
+                    else
+                        pcall(function()
+                            game.Players.LocalPlayer.Character["Right Arm"].RightGrip:Destroy()
+                        end)
+                    end
+                end
+            end
+        end
+    end)
+    local uis = game:GetService("UserInputService")
+    game:GetService("RunService").RenderStepped:Connect(function()
+        if not duping then
+            return 
+        end
+        pcall(function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = tpback
+        end)
+        for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+            if v:IsA("Tool") then
+                v.Parent = game.Players.LocalPlayer.Character
+                wait(0.5)
+                v.Parent = workspace
+                wait(0.3)
+                for _, k in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+                    if k:IsA("Tool") then
+                        k.Parent = game.Players.LocalPlayer.Character
+                        wait(0.5)
+                        k.Parent = workspace
+                    else
+                        k:Destroy()
+                    end
+                end
+            end
+        end
+    end)
+end)
+
+--LoopFlingAll Made By Jay_Devv819!
+
+--Enjoy
+
+game:GetService("StarterGui"):SetCore("SendNotification", { 
+	Title = "LoopFlingAll";
+	Text = "Loading...";
+	Icon = "rbxthumb://type=Asset&id=7969699183&w=150&h=150"})
+Duration = 100;
+
+wait(6)
+
+game:GetService("StarterGui"):SetCore("SendNotification", { 
+	Title = "LoopFlingAll";
+	Text = "Loaded! Wait 5 Seconds And The Fling Will Start!";
+	Icon = "rbxthumb://type=Asset&id=7969699183&w=150&h=150"})
+Duration = 100;
+
+wait(5)
+
+game:GetService("StarterGui"):SetCore("SendNotification", { 
+	Title = "LoopFlingAll";
+	Text = "Started! (It Will Make Your Avatar Jump Into The Floor)";
+	Icon = "rbxthumb://type=Asset&id=7969699183&w=150&h=150"})
+Duration = 100;
+
+LocalPlayer = game:GetService("Players").LocalPlayer
+LocalPlayer.Character.Humanoid:MoveTo(LocalPlayer.Character.HumanoidRootPart.Position + LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 10)
+LocalPlayer.Character.Humanoid.Jump = true
+wait(0.5)
+function Iterate(instance, func)
+for i, v in next, instance:GetChildren() do
+func(v)
+end
+end
+limbs = {
+["Right Leg"] = true;
+["Right Arm"] = true;
+["Left Leg"] = true;
+["Left Arm"] = true;
+}
+Iterate(LocalPlayer.Character, function(v)
+if v:IsA("BasePart") then
+local attachment = Instance.new("Attachment")
+attachment.Parent = v
+attachment.Name = (v.Name .. "[Attachment]")
+if limbs[v.Name] then
+attachment.Position = Vector3.new(0, v.Size.Y/2, 0)
+elseif v.Name == "Head" then
+attachment.Position = Vector3.new(0, -v.Size.Y/2, 0)
+attachment.Rotation = Vector3.new(0, 0, -90)
+end
+end
+end)
+local leftLegAttachment = Instance.new("Attachment")
+leftLegAttachment.Position = Vector3.new(-.5, -1, 0)
+leftLegAttachment.Rotation = Vector3.new(0, -90, 0)
+local rightLegAttachment = Instance.new("Attachment")
+rightLegAttachment.Position = Vector3.new(.5, -1, 0)
+rightLegAttachment.Rotation = Vector3.new(0, -90, 0)
+rightLegAttachment.Parent, leftLegAttachment.Parent = LocalPlayer.Character.Torso, LocalPlayer.Character.Torso
+jointAttachments = {
+['Head'] = {
+['Attachment0'] = LocalPlayer.Character.Torso['NeckAttachment'];
+['Attachment1'] = LocalPlayer.Character.Head['Head[Attachment]'];
+};
+['Left Arm'] = {
+['Attachment0'] = LocalPlayer.Character.Torso['LeftCollarAttachment'];
+['Attachment1'] = LocalPlayer.Character['Left Arm']['Left Arm[Attachment]'];
+};
+['Right Arm'] = {
+['Attachment0'] = LocalPlayer.Character.Torso['RightCollarAttachment'];
+['Attachment1'] = LocalPlayer.Character['Right Arm']['Right Arm[Attachment]'];
+};
+['Left Leg'] = {
+['Attachment0'] = leftLegAttachment;
+['Attachment1'] = LocalPlayer.Character['Left Leg']['Left Leg[Attachment]'];
+};
+['Right Leg'] = {
+['Attachment0'] = rightLegAttachment;
+['Attachment1'] = LocalPlayer.Character['Right Leg']['Right Leg[Attachment]'];
+};
+}
+LocalPlayer.Character.Humanoid.PlatformStand = true
+Iterate(LocalPlayer.Character, function(v)
+if v:IsA("BasePart") then
+if jointAttachments[v.Name] then
+local ballSocketJoint = Instance.new("BallSocketConstraint")
+ballSocketJoint.Parent = v
+ballSocketJoint.Radius = 0.15
+ballSocketJoint.Attachment0, ballSocketJoint.Attachment1 = jointAttachments[v.Name]['Attachment0'], jointAttachments[v.Name]['Attachment1']
+end
+end
+end)
+
+wait(7)
+
+game:GetService("StarterGui"):SetCore("SendNotification", { 
+	Title = "LoopFlingAll";
+	Text = "If You Do Not Teleport Into The Sky Reset Twice And Try Again! Made By Jay_Devv819!";
+	Icon = "rbxthumb://type=Asset&id=7969699183&w=150&h=150"})
+Duration = 100;
+
+return(function(iL,FL,rL,AL,sL,aL,NL,gL,VL,pL,bL,GL,qL,OL,xL,eL,DL,cL,dL,yL,wL,TL,zL,lL,vL,SL,JL,BL,jL,XL,tL,nL,RL,kL,oL,hL,uL,WL,LL,UL,Hh,KL,IL,...)local M,C,Mh,P,Z,J,E,v,q=qL,pcall,0,nil,nil,nil,nil,nil,(nil);while Mh~=0X6 do if Mh<=2 then do if not(Mh<=0X00000)then if Mh~=0X001 then do J=0x1;end;Mh=0X4;else q=FL;Mh=6;end;else do P=UL;end;Mh=5;end;end;else if Mh<=0X3 then do v="LPH)4D37F81901006102C4B6D46HFF414H00F30DFB1F357DB62H003D1A01005915B90F3H004DA84BF64C48D93F9DF0E1DA3DC8B4B90F3H006ABD98BB8CB79A4DAEB391B881EA0DB90C3H004F5A2D88494CB7C6C984975FB9123H00634E013CCB537C42C975C3132HA2A9189805B9153H00712C2F3A64D7255BE2C54906BF46694E295EA90229B91C3H00587BA69988E552ECAB8AAE091C204D140BC78A3A815D7605872396FCB90B3H00FC7F0A5D295FDCDAA7BB8EB9103H00153093FE2F64F52171F8DD1AE30F2653B90C3H00852003EE3DF4430A3360DDCEB90B3H0059D4976246BB97BA172C77B90D3H00DAAD08AB614BE0E7BF60731E77B90B3H0081BC3FCAAC43FF12327995B9123H0042D5F0539C65A42H5465B05BAEEF22296EA8B9083H00E0C3AE6159C6BF80B90E3H00D8FB2619B18CFB569EE510830751B90E3H009A6DC86B03603619E46C296E358FB9083H007CFF8ADD857963A8B90B3H0074370295EEB84F61DBD69DB90F3H004DA84BF603971C69DC933C16662766B9093H006ABD98BBC50CD9A223B9173H007590F35EED9CF1C68D90989B7E1E33C14D1EEDAE35FA35B9093H004A9D789B4E0B2F6892C4F1D86HFFB90F3H005570D33E687DBBDBB83A9C130D87EAB9073H00B2C560434865E1B9083H009F2A7D583D848937B90C3H00D7A23550F9EFC0586BBCE3FBB90F3H00EB96090406FF39B85520E2C304DFC190B9113H00385B867994C5080CB7EEBA5503BAF32632B91C3H00CB76E9E442A3EF794D74486B13B143D77C68A9C7C5CC98013CBBF8AFB90A3H00CFDAAD08D7589A6F29BBB9143H006500E3CE6C47157B5AC53936C6CD576EB44B7256B90C3H00F1ACAFBA7A17AFB3C0A7CE62B9173H0045E0C3AE8EDF33A7C870EDFEA8555E919DCE34C87DD98BB9093H009A6DC86B1EB917C6DDB9083H0025C0A38EF3A3E5EFB90D3H00DDB8DB06E1952F233B850384A9B90B3H006C6F7A4DF1AD4ECFC55287429A5H99A9BFB9083H0005A0836E06AF395BB9083H00BD98BBE67067F91EB9083H007590F35E8823BBE3B90F3H002D882BD6EEFF6382FD55967E953745B9093H004A9D789B2B4E7B3A5AB9053H005570D33E24B90D3H002C2F3A0DD1C3F4CBE5BCA7AB73AFB90E3H00432EE11C74F79F16BA35F5830E85B90E3H003550B31E89BCD7F699B8353CC42BB90C3H004792A540B667889DDB338093B9083H005B8679F411774CCEB9113H0093FE31EC634311176A0B2H8F927859A1ACB9153H00EEA1DC5F3D65CA8CE7FCDA1120C04CFBDEBD4C5017B90E3H00AD08AB56C3179CF9D108669BB7E7B9073H003FCA1DF8A5B5A1B9103H00B47742D5B0C71ED53C35DE0301E10EB5B9073H00A4E73245C0A550B90D3H00619C1FAA57A2918015212C5F36B90E3H00D0339ED155FDA85BF910DA19C22HB9093H001225C0A33E53E893CDB90A3H00DDB8DB06A8BF660B7EAAB5C48H00B90C3H00137EB16C3CA52AEF0D6081E0B90B3H00A7F205A0EF395E8889755CB9113H0098BBE6D96955501EB7A62E4F2B1D777E23B9133H002BD64944973B345D50FF5C0BB130510CB8FBECB90F3H0034F7C255F9F0C7A7DB19B6796F23FAB90C3H00292467B230337127CE9995E289D23H00013H00083H00013H00093H00093H001F64701D0A3H000A3H009DD866160B3H000B3H00C0C6C8790C3H000C3H00722DE5700D3H000D3H00BCED1C680E3H000E3H00601E13230F3H000F3H00191E6E00103H00103H0067939433113H00113H0077F18E73123H00123H00503D512H133H00133H0012D5F31B143H00143H00013H00153H00173H00383H00183H00193H00013H001A3H001C3H00383H001D3H001E3H00013H001F3H001F3H00383H00203H00213H00013H00223H00223H00383H00233H00243H00013H00253H00263H00383H00273H00283H00343H00293H002A3H00013H002B3H002B3H00343H002C3H00303H00013H00313H00313H00353H00323H00333H00013H00343H00343H00353H00353H00383H00013H00393H003A3H00363H003B3H00423H00013H00433H00433H00373H00443H00453H00013H00463H00483H00373H00493H004A3H00013H004B3H004D3H00393H004E3H004F3H00373H00503H00513H00393H00523H00533H00013H00543H00563H00393H00573H00593H00383H005A3H005B3H00013H005C3H005D3H00393H005E3H005F3H00013H00603H00613H00373H00623H00633H00013H00643H00663H00293H00673H00683H00013H00693H006E3H00293H006F3H006F3H004A3H00703H00713H00013H00723H00783H004A3H00793H007A3H00163H007B3H007F3H00013H00803H00823H00273H00833H00843H00013H00853H00863H00273H00873H008A3H00013H008B3H008B3H00523H008C3H008D3H00013H008E3H00903H00523H00913H00913H004F3H00923H00933H00013H00943H00993H004F3H009A3H009C3H00863H009D3H00A03H00873H00A13H00A23H00013H00A33H00A63H00873H00A73H00A83H00013H00A93H00AA3H00873H00AB3H00AD3H00013H00AE3H00B13H00503H00B23H00B33H00013H00B43H00B63H00503H00B73H00BA3H00013H00BB3H00BE3H00703H00BF3H00BF3H00723H00C03H00C13H00013H00C23H00C43H00723H00C53H00C63H006F3H00C73H00C83H00013H00C93H00CA3H004F3H00CB3H00CC3H006F3H00CD3H00CF3H00863H00D03H00D13H00013H00D23H00D43H00863H00D53H00D53H00723H00D63H00DD3H00013H00DE3H00DE3H00433H00DF3H00E03H00013H00E13H00E13H00433H00E23H00E63H00263H00E73H00E73H00013H00E83H00E83H00263H00E93H00EA3H00013H00EB3H00EC3H00263H00ED3H00EE3H001B3H00EF3H00F13H003A3H00F23H00F33H00143H00F43H00F63H00013H00F73H00F93H00283H00FA3H00FB3H00013H00FC3H00FE3H00283H00FF3H002H012H001C3H0002012H0003012H00013H0004012H0004012H001C3H0005012H0006012H00013H0007012H0008012H00213H0009012H0016012H00203H0017012H0018012H00013H0019012H0019012H00203H001A012H001B012H00013H001C012H001C012H00203H001D012H001E012H00013H001F012H001F012H00203H0020012H0021012H00013H0022012H0023012H00203H0024012H0025012H00213H0026012H0027012H00013H0028012H0028012H00213H0029012H0029012H00203H002A012H002D012H00013H002E012H002F012H00213H0030012H0031012H00393H0032012H0035012H004B3H0036012H0036012H00013H0037012H0038012H001B3H0039012H003A012H00013H003B012H003B012H001B3H003C012H003D012H00013H003E012H003E012H001B3H003F012H0041012H003A3H0042012H0043012H00263H0044012H0044012H00153H0045012H0046012H00013H0047012H0048012H00153H0049012H004D012H00013H004E012H004E012H00153H004F012H0051012H002A3H0052012H0052012H00013H0053012H0053012H002A3H0054012H0055012H00013H0056012H0058012H002A3H0059012H005A012H00013H005B012H005C012H002A3H005D012H0063012H00423H0064012H0064012H00493H0065012H0066012H00013H0067012H0067012H00493H0068012H0069012H00013H006A012H006A012H00493H006B012H006D012H00013H006E012H006F012H00493H0070012H0070012H003F3H0071012H0072012H00013H0073012H0075012H003F3H0076012H0077012H00013H0078012H007A012H00413H007B012H007C012H00013H007D012H007D012H00413H007E012H007F012H00483H0080012H0081012H002B3H0082012H0083012H00013H0084012H0085012H002C3H0086012H008A012H002B3H008B012H008B012H002C3H008C012H008D012H00013H008E012H008E012H002C3H008F012H0090012H00413H0091012H0092012H00283H0093012H0096012H003B3H0097012H009B012H00223H009C012H009E012H00123H009F012H009F012H000C3H00A0012H00A1012H00013H00A2012H00A3012H000C3H00A4012H00B0012H00013H00B1012H00B2012H000F3H00B3012H00B6012H00013H00B7012H00B7012H000B3H00B8012H00B9012H00013H00BA012H00BB012H000B3H00BC012H00C0012H00013H00C1012H00C1012H000C3H00C2012H00C3012H00013H00C4012H00C6012H000C3H00C7012H00C8012H00013H00C9012H00CB012H00143H00CC012H00CD012H00013H00CE012H00CF012H00143H00D0012H00D1012H000C3H00D2012H00D3012H00013H00D4012H00D4012H000C3H00D5012H00D8012H00013H00D9012H00D9012H000D3H00DA012H00DD012H00013H00DE012H00E2012H000E3H00E3012H00E6012H00013H00E7012H00E9012H000F3H00EA012H00EA012H00013H00EB012H00ED012H00113H00EE012H00F0012H00013H00F1012H00F2012H00123H00F3012H00F4012H00013H00F5012H00F5012H00133H00F6012H00FD012H00013H00FE012H00FF012H00234H00022H0004022H00013H0005022H0006022H00493H00C07B998F7D81B62H00111A010001D9B90B3H007D6043269A27CB36B37803B9083H003E2104E7A901CF68B90F3H0056391CFFC8FB26AEB7E8E50393F03BAFB90C3H00A386694C06395CFFB07F8F00B9073H00472A0DF03E1F0BB90C3H007C5F42259603ADB1729561BEB9123H002003E6C9BC69844064E150676E73C27D9ECCB90F3H0016F9DCBF8A176DB5EAC0B2152FFD1CB90F3H006346290C0790554FBE5E2D26C13D32B9083H00B093765961CD9395B9073H00C8AB8E71E3F31BB90B3H00FDE0C3A640C295CF6D0C17B9123H00BEA18467C5E92E74BFEFF1DD5C889BAE0E8FB90E3H00B4977A5D9189AA08FA1DF725349FB90E3H001E01E4C79841FCDBF7562C694901C49C7HFFB90D3H00886B4E313D7C978AEF0762E5ACB9093H000FF2D5B800AB4580BBB9143H000AEDD0B326DD4BAD703FBF587C2719D8AE21B468B90D3H00C6A98C6F12B1F38AE6C68FE18EB90C3H004D3013F666CBF8396BF7506FB90E3H00F1D4B79ACB9F242919C0AE7B0F3FB90C3H005B3E2104BE4FA3133C1F4AC2423H00C585316AC2C48H00C2613H00013H00083H00013H00093H00093H008489852A0A3H000A3H00412A89630B3H000B3H00F3BA4F360C3H000C3H00B42915100D3H000D3H00DE2H9F440E3H000E3H008C7787410F3H000F3H00B188B77A103H00103H00013H00113H00113H00593H00123H00133H00013H00143H00143H00593H00153H00163H00013H00173H00173H00593H00183H001B3H00013H001C3H001D3H00593H001E3H001E3H00013H001F3H00207H00213H00243H00013H00253H00273H00623H00283H00293H00013H002A3H002A3H00623H002B3H002C3H00013H002D3H002D3H00623H002E3H00303H00013H00313H00333H00583H00343H00353H00013H00363H00383H00583H00393H00393H005C3H003A3H003C3H00013H003D3H003D3H005D3H003E3H003F3H00013H00403H00423H005D3H00433H00433H00013H00443H00443H005C3H00453H00463H00013H00473H004A3H005C3H004B3H004C3H00013H004D3H004F3H005B3H00503H00513H005D3H00523H00583H00013H00593H005C3H005B3H005D3H005D3H00013H005E3H005E3H00643H005F3H00603H00013H00613H00643H00643H00653H00663H00013H00673H00673H00653H00683H00693H00013H006A3H006A3H00653H006B3H006E3H00013H006F3H006F3H00663H00703H00713H00013H00723H00723H00663H00733H00783H00013H00793H007A3H00673H007B3H007E3H00013H007F3H00823H00683H00833H00863H00013H00873H00893H00583H008A3H008A3H00013H008B3H008C3H00613H008D3H008E3H00013H008F3H00903H00613H00913H00933H00013H00943H00963H00613H00973H00983H00593H00993H00993H00013H009A3H009B3H00543H009C3H009C3H005A3H009D3H009E3H00013H009F3H00A43H005A3H00A53H00AF3H00583H00B03H00B23H00013H00B33H00B73H006B3H00B83H00B93H00013H00BA3H00BA3H006B3H00BB3H00BC3H00013H00BD3H00BF3H006B3H00C03H00C03H00013H00C13H00C33H00603H00C43H00C53H00013H00C63H00C63H00603H00C73H00C83H00013H00C93H00CB3H00603H00CC3H00CD3H00573H00CE3H00CF3H00623H00D03H00D13H00013H00D23H00D53H00573H00D63H00D93H00013H00DA3H00DA3H00573H00DB3H00DC3H00013H00DD3H00DE3H00573H00DF3H00DF3H00583H00E03H00E13H00013H00E23H00E33H00583H00E43H00EB3H00633H00BF86CF7E4D7BB62H000AEC0400063H0002000314EADC50806900DE2D013H000739010797012H000739010796012H000739010795012H0007260C07052H0007540A07112H0007480A071B2H00070E2H07E6012H00070E2H07EB01517307022H075FC101820107082H07267FB501072A2H07AF01A30175070A2H07EF016A7107452H07124D9101075F2H07316CF701072C2H07FC012H00073901078801000407582H07022H000739010701000407362H072D040307582H073H000739010701000307362H075B0003074F01077F000307540A07122H000739010701000307540A0711000407092H07020D04073E070A042H0007390107F33HFF0F000307092H0703000307370107AC012H000739010770000307540A07122H000739010701000307540A0711000407092H07020D04073E070A042H00073901072H000407582H07022H000739010701000407362H0723040307582H073H000739010701000307362H07BB010003074F0107A001000307540A070A2H000739010701000307540A07111603073E070A03000507480A070C0003073C2H073H000739010701000307362H075608030750070A2H03E63HFF0F01382H07022H0007390107A601000607232H07042H000739010701000607362H07E101060507100A070211060750070A022H000739010701000607540A07110706073E070A06000807480A07132H00073901070D000607540A070005060750070A062H000739010701000607540A0711002H07480A0718000807480A0718000907480A07182H0007390107EE3HFF0F060507100A07152H0007390107F63HFF0F000907480A0719000607232H07042H0007390107FB3HFF0F0006073C2H07002H060750070A062H000739010701000607540A0711060507100A07062H000739010741000607540A073H000739010701000607540A071105060750070A06002H07480A0719000807480A07102H0007390107F03HFF0F000607540A070005060750070A062H000739010701000607540A0711002H07480A0719000807480A0710000907480A0719000607232H0704060507100A0715000607540A070005060750070A062H000739010701000607540A0711000607062H073H000739010701000607362H070E060507100A0702000607540A070005060750070A062H000739010701000607540A0711000607062H073H000739010701000607362H0750060507100A0704000607540A073H000739010701000607540A071105060750070A06000607062H0700060507100A0709000607092H07032H000739010701000607540A07110706073E070A06000807480A07130006073C2H07002H060750070A2H060507100A07062H000739010749000407092H0701000507132H07020004073A2H072H000407310107953HFF0F2H00073901078E3HFF0F2H00073901070E000507480A07130003073C2H073H000739010701000307362H07550003073701073C2H000739010705000307092H07032H000739010701000307540A07110703073E070A032H0007390107F53HFF0F2H00073901078A3HFF0F000307280107092H0007390107272H0007092H0700033B0147070A3H0007390107340006073C2H073H000739010701000607362H076F000607370107F73HFF0F2H0007390107030B06073E070A05000807480A07172H0007390107F83HFF0F2H0007390107B13HFF0F0004073C2H073H00073901072H000407370107F6FE2HFF0F2H0007390107060704073E070A042H00073901070211040750070A022H0007390107FC3HFF0F000607480A07132H0007390107F63HFF0F2H0007390107D53HFF0F000307540A070A2H000739010701000307540A07111603073E070A03000507480A070F2H0007390107012H0007390107150003073C2H073H000739010701000307362H071314030750070A032H000739010701000307540A07110103073E070A030003071B2H073H0007390107F63HFF0F000307540A070A1603073E070A03000507480A070F0003073C2H073H000739010701000307362H07AE0114030750070A032H000739010701000307540A07110103073E070A030003071B2H073H00073901073H0007280107E1FE2HFF0F2H0007390107BC3HFF0F000307280107172H0007390107E03HFF0F2H000739010700D601F001071A2H07F101000107582H0702040007582H073H00073901073H00074F0107F63HFF0F2H0007540A07122H0007390107012H0007540A0711000107540A070A0C010750070A012H000739010701000107540A07110E01073E070A012H0007390107F33HFF0F11040750070A022H000739010701000407540A0711000407370107BBFE2HFF0F2H0007390107C73HFF0F000607370107E93HFF0F2H0007390107050B06073E070A052H00073901072H000807480A07170006073C2H073H0007390107F93HFF0F2H0007390107F1FE2HFF0FC6D9F960D67B00AFD56C6B00FE1901001190B90C3H00FFD2D5081EF728B593F3D02BB9053H004356990CDCB9053H008285B81B03B90F3H00716487DA8094B5533974151EC16488B90D3H005E211437097CE3EAD3071E55D8B9053H00E5187B0EAAC49C7HFFE81D3H00013H00083H00013H00093H00093H000E609A510A3H000A3H0013B3EF2A0B3H000B3H00259675310C3H000C3H000C2BFB540D3H000D3H00B65508220E3H000E3H00DF17620A0F3H000F3H00E028D105103H00103H00AA1C2C04113H00113H0042342277123H00123H00013H00133H00133H00043H00143H00153H00013H00163H00163H00043H00173H00183H00013H00193H001A3H00043H001B3H001C3H00013H001D3H001E3H00043H001F3H00203H00013H00213H00243H00043H00253H00263H00013H00273H002A3H00043H002B3H002C3H00013H002D3H002F3H00033H00303H003A3H00043H003B3H003C3H00033H003D3H003E3H00013H003F3H00403H00033H00413H00423H00013H002B972F223A7BB62H0005B90027716446EF3E00352D013H00073901072B2H00073901072A2H0007390107292H0007260C07042H0007540A07052H0007480A07082H00070E2H07E4012H00070E2H07EC01B1010B07442H07194832073F2H07A90143FB01072C2H07C601126907012H0789018A011307492H079901BD0171075C2H0776E901DF01073B2H07CD01D301950107122H07D50111A401070E2H07562H00073901071A04010750070A3H000739010701000107540A070503010750070A012H000739010701000107540A070500010750070A3H010750070A012H000739010701000107540A0705010D01460A07062H0007390107052H000739010700D601F001071A2H07F1012H020750070A2H020801460A07062H00073901070604020750070A3H000739010701000207540A070503020750070A0200020750070A022H0007390107F73HFF0F2H00073901070B000107242H0700D0013E07372H073F04010750070A2H000107370107F13HFF0F2H00073901070B05030750070A032H000739010700030E01590A07062H00073901070600030750070A032H0007390107FA3HFF0F04030750070A3H0007390107002H030750070A032H0007390107FA3HFF0F2H0007390107F03HFF0F04010750070A0003010750070A012H000739010701000107540A0705000107370107E03HFF0F2H0007390107D23HFF0F000107272H0700DA011D07042H071EAC91034A560701BF56F64E00F91901003541C48HFFB9103H00C47786A1A64AB74E91085F7257E635594E0B3H00013H00083H00013H00093H00093H00A52E9A020A3H000A3H00119A00140B3H000B3H006BFE116E0C3H000C3H00802D7C170D3H000D3H00DEC2855A0E3H000E3H008D04BC7E0F3H000F3H00A7C79849103H00103H0085EDE33E113H00113H0025C97911123H00143H00013H002BAAE3EB267BB62H000256010006A6E1A84D690E00072D013H0007390107102H00073901070F2H00073901070E2H0007260C07042H0007540A07022H0007480A07032H00070E2H07E0012H00070E2H07ED017F7507352H076D488D01073E2H079401FC0170072A2H07CB01355D07492H07682C8B0107252H07C00145D70107032H07A101C7019501074D2H07C601A1011007542H070676DE01072A2H0790012H0007092H073H0007432H0A01D601F001071A2H07F101598DCD496AB100E252B84800081A0100C1E7B90E3H0014F71A7D72250DDB9932C045C538B90B3H003EA14427FAF85311177609B90B3H003F62C5685063E3EA46B961B90F3H00806386E9706D11CC8B67C498FB85B7B91E3H000DB093B66835891D9F18B8BD4822A3BE86D3D00251C63E5BC3463D9966B8B9143H00E70A6D102B27FA2E3ED5805BFE9B078BF4738B8CB90C3H002346A94CFC43255FCA99292AB9083H00476ACD70A4FFA4E6B9173H005F82E5889BDF1152FC8F80A65E71E0FF512F7423408798B9093H00C4A7CA2D466126483FB90E3H00BFE245E8275291CC60930A49513FB90E3H00690CEF129BAF44D9C9C0BE9B5F0FB90F3H001336993C8530F6398E4369C28591EEB9083H00604366C9ADF1F771B9123H00785B7EE1A8EDC8CCF8FD94431AD77E217200B90B3H00AE11B49711A9CE13950E97B9173H00AFD235D81E3BEB83486C65425891D635BD226C248DFDF307373H00013H00083H00013H00093H00093H009327AB620A3H000A3H0012BBDB5D0B3H000B3H001D4B9D1B0C3H000C3H00CE68E73B0D3H000D3H00C5A23D4F0E3H000E3H003CD6B9300F3H000F3H001F8D7E00103H00103H00BA541849113H00143H00013H00153H00163H007E3H00173H00183H00013H00193H00193H007E3H001A3H001A3H00013H001B3H001C7H001D3H001F3H00013H00203H00237H00243H00263H00013H00273H00277H00283H00293H007B3H002A3H002B3H00013H002C3H002E3H007B3H002F3H00313H00013H00323H00333H007B3H00343H00363H00013H00373H00393H007A3H003A3H003B3H00013H003C3H003D3H007A3H003E3H00403H00813H00413H00423H00013H00433H00453H00833H00463H00473H00013H00483H00483H00833H00493H004A3H00013H004B3H004F3H00833H00503H00523H00813H00533H00543H00013H00553H00553H00813H00563H00583H00803H00593H005A3H00013H005B3H005D3H00803H005E3H00613H00813H00623H00633H00013H00643H00653H00813H00663H00693H00803H006A3H006D3H00813H006E3H00703H00013H00713H00723H00783H00733H00743H00013H00753H00753H00783H00763H00763H00743H00773H00783H00013H00793H00793H00743H007A3H007A3H00013H007B3H007C3H00743H00187C3AFF357BB62H00095F040003000800020007DFB5B01FD83F006F2D013H00073901071B2H00073901071A2H0007390107192H0007260C07052H0007540A07122H0007480A07132H00070E2H07E0012H00070E2H07ED014471071C2H07C201730A07142H07A501146207142H07629601F70107042H07A901769701073D2H079B0142F20107582H07321EA101074A2H0750AD01BB0107162H072C2H00073901070B000107092H07032H000739010701000107540A07120201073E070A010001071B2H073H000739010701000107362H07B8012H000739010748000107092H0703000107370107462H0007390107F53HFF0F2H0007092H073H0007390107012H0007540A07122H0007370107032H000739010758000107370107112H0007390107032H0007242H072H000107092H07012H0007390107FB3HFF0F2H000739010746000307480A07060001073C2H073H000739010701000107362H070D0201073E070A010001071B2H073H0007390107EB3HFF0F000107092H07022H000739010701000107540A07120E01073E070A012H0007390107F43HFF0F000107092H07022H000739010701000107540A07120E01073E070A01000307480A07060001073C2H073H000739010701000107362H077A000107370107DD3HFF0F2H0007390107F13HFF0F0C0407432H0A09000507480A0708000607540A070D2H000739010701000607540A07120B06073E070A06000807480A07010006073C2H073H000739010701000607362H07EE0103060750070A062H000739010701000607540A0712002H07480A0704070507162H07052H000739010700050407100A2H072H000739010702000307480A070A2H00073901071A000107332H07042H000739010701000107362H071F313007362H07310B01073E070A01000307480A070A0001073C2H073H000739010701000107362H07C6010F01073E070A01000307480A07102H0007390107080F01073E070A012H0007390107040004074B2H073H0007390107DC3HFF0F000107540A070D2H0007390107F23HFF0F000307480A07052H0007390107FA3HFF0F000407242H072H000107332H0704000107540A070D2H0007390107000B01073E070A012H0007390107E43HFF0F0001073C2H073H0007390107F03HFF0F000107092H07012H000739010701000107540A07120001073E070A010001071B2H073H000739010701000107362H07482H0007390107BE3HFF0F2H00071B2H073H0007390107012H0007362H07772H0007390107AA3HFF0F2H0007092H07000200073E070A3H0007390107F93HFF0F18C2A24B0A6D00CDE9175200FE1901009581B90E3H00148776911DA5AA8B8FB2300109E5B90E3H00723D641749A0A73E0E59DC03BFBDB90B3H004023424D01DD4AF32DBAA3B9083H00D5DCEFFE5B9FF9C7B9173H005D0437E69A6F23EB1C982582AC351EDD99469C142HA95BB90B3H004AF57C0FDE214598883317B90E3H005786E1D89CFFD321B7D0AEB74BE27E1C3H00013H00083H00013H00093H00093H00B8EB41640A3H000A3H0016CB69680B3H000B3H00D0B5FF0A0C3H000C3H0068A8B04A0D3H000D3H002AB2D04D0E3H000E3H002C18AD6B0F3H000F3H00013H00103H00117H00123H00143H00013H00153H00167H00173H00193H00013H001A3H001B3H008E3H001C3H001D3H00013H001E3H001E3H008E3H001F3H00213H00013H00223H00243H008A3H00253H00283H00013H00293H002A7H002B3H002C3H00013H002D3H002D7H002E3H00303H00013H00313H00393H00933H003A3H003C3H00013H003D3H003E7H003F3H003F3H00913H00403H00413H00013H00423H00443H00913H0037194FB66D7BB62H0005F20400020003000800077EFB6112F77100372D013H00073901070D2H00073901070C2H00073901070B2H0007260C07052H0007540A07082H0007480A07092H00070E2H07E0012H00070E2H07EE016638074D2H0763CA010407172H07C8018601B90107582H0734D801FC0107082H07E001CF2H0107382H0772C201A201072A2H070F2H0007092H073H0007370107142H000739010728000107092H07032H000739010701000107540A0708000107370107182H000739010729000107092H07022H000739010701000107540A07080601073E070A010001071B2H073H000739010701000107362H07C7012H0007390107F33HFF0F2H0007092H07012H0007390107012H0007540A07080500073E070A3H00071B2H073H000739010706313007362H0731000107092H07022H000739010701000107540A0708000107370107E83HFF0F2H0007390107022H0007242H073H0007390107F93HFF0F2H0007390107E93HFF0F000107540A07032H000739010701000107540A07080001073E070A01000307480A07010001073C2H07000201073E070A01000307480A07042H00073901072H000407242H072H000107332H07042H0007390107EB3HFF0F2H0007092H07012H0007390107012H0007540A07082H0007370107ED3HFF0F2H0007390107E03HFF0F2H0007390107EE3HFF0F000107092H07032H0007390107000501073E070A010001071B2H073H0007390107FA3HFF0FDDD3C365F29F00D120261500F8190100A510B9103H008DC43756A87C75BC97860D90C9F0D7ABCF0D3H00013H00083H00013H00093H00093H006CDC9D780A3H000A3H006FA6462D0B3H000B3H003B6A3D430C3H000C3H0043655A7A0D3H000D3H0099B56E360E3H000E3H0013A35D6F0F3H000F3H00B3AE3307103H00103H0059BAB855113H00153H00013H00163H00163H00153H00173H00183H00013H00193H00193H00153H00299FDEAE587BB62H0002AA010006BC43B122A4FE000C2D013H0007390107112H0007390107102H00073901070F2H0007260C07042H0007540A07022H0007480A07032H00070E2H07E3012H00070E2H07E9018301EF01070B2H07194A2H07442H07472473071E2H07A4016057072C2H07E101F30142073E2H072C45F10107362H0755FC01920107442H0715B501A90107292H0780012H000739010701313007362H07312H0007092H073H0007390107012H0007540A07022H000750070A3H0007390107012H0007540A0702D0013D07372H073FD709CA7EA14E00ACB16D79000EC400071DDE6F0A7F02F92E013H0007390107A2032H0007390107A1032H0007390107A0032H0007260C070A2H0007540A07102H0007480A07462H00070E2H07E3012H00070E2H07EE01DD01A60107022H07BE011ADA0107582H07C501FA0115073E2H07F501B701DF0107362H079101F00172072B2H07280CE20107372H07F101810116071C2H07F501A10179071E2H078D01343F074E2H07B001CC01C60107042H074B8201BB0107022H0799012H00073901078F0311060750070A0617060750070A063A060750070A062H000739010701000607540A071045060750070A064306073E070A06000807540A07192H000739010701000807540A071004080750070A082H000739010701000807540A071029080750070A082H000739010701000807540A0710000907272H073H00073901073011050750070A0517050750070A052H000739010701000507540A07103A050750070A052H000739010701000507540A0710000607540A07242H000739010701000607540A071011060750070A062H000739010701000607540A071017060750070A061C0607432H0A3A000607540A07242H000739010701000607540A071011060750070A0617060750070A062H000739010701000607540A07108901E001070C2H07DE01070607100A073A000607540A07102H000739010701000607540A0710002H07540A0724112H0750070A072H000739010701002H07540A07102B2H0750070A07272H070F070A072H000739010705000407272H073H000739010713002H07582H0702040607582H073H0007390107020006071B2H073H0007390107100006074F0107DF01172H0750070A072H000739010701002H07540A07103A2H0750070A07122H073E070A072H0007390107F43HFF0F000607332H0704000607540A0723002H07540A07242H000739010701002H07540A0710112H0750070A072H0007390107F33HFF0F000507540A07242H0007390107C73HFF0F000607540A07242H0007390107B33HFF0FE101B40107362H07B0012H00073901078E01000D07242H073H00073901072H000A07232H07042H000739010701000A07362H07EC01000A07370107A7022H0007390107030C0A073E070A09000C07480A07142H0007390107F63HFF0F2H0007390107E3010009073C2H073H000739010701000907362H071500090737010792032H000739010704000B07480A07442H0007390107F93HFF0F3709073E070A082H0007390107FC3HFF0F2H0007390107B901002H071B2H073H0007390107E73HFF0F002H07540A07152H000739010701002H07540A0710000807260C07022H0007390107F93HFF0F372H073E070A06000907480A071B002H073C2H073H000739010701002H07362H07E301002H07370107BC012H00073901076D000607272H072H002H07540A070A2H000739010701002H07540A07100D2H0750070A072H000739010701002H07540A0710000807260C072H002H073A2H073H0007390107340006073C2H073H000739010701000607362H075B0B06073E070A062H00073901072H0006071B2H073H0007390107130C06073E070A052H00073901072F8901E501070C2H07E001000907332H07042H0007390107000C09073E070A022H000739010705000B07260C0704000907302H073H000739010701000907362H07262H00075B2H072H000B07480A07450009073C2H070030090750070A092H000739010701000907540A07104109073E070A092H0007390107F43HFF0F000607540A07242H000739010701000607540A07103606073E070A06000807480A072E0006073C2H070042060750070A062H000739010701000607540A07100C2H073E070A03000907480A0745002H073C2H073H000739010701002H07362H0771070607100A07342H0007390107CC3HFF0F182H0750070A07000807480A071D002H073A2H072H000807182H07002C090750070A072H000739010701000907540A07100609073E070A09000B07260C07032H000739010710002H07532H073H000739010704000907540A07242H000739010704000807480A07012H0007390107C63HFF0F002H07540A07022H0007390107EE3HFF0F3609073E070A09000B07480A070E0009073C2H073H000739010701000907362H07122609073E070A09000B07480A07222H0007390107C53HFF0F0009073C2H073H000739010701000907362H073A8901E101070C2H07E2012H0007390107ED3HFF0F000907540A07358901E301070C2H07E101000B07480A071E000C07480A073F000907332H07042H000739010701000907362H07272H0007390107AD012H0407582H073H00073901072H0004074F01075D000507582H07022H0007390107FB3HFF0F000407540A072345050750070A022H000739010701000507540A07101205073E070A052H0007390107F83HFF0F000407280107112H000739010720280A0750070A080F3F0147072H0A2H0007390107A301000407280107562H000739010742002H07540A07232H000739010701002H07540A07101208073E070A022H00073901072H042H07582H073H000739010701002H07362H0740002H074F01079401000807582H07022H0007390107FA3HFF0F372H073E070A06000907480A0721002H073C2H073H000739010701002H07362H0770002H07370107E83HFF0F3E0607432H0A3B2H0007390107E63HFF0F0004072801078F012H0007390107DE3HFF0F002H07480A07202H00073901070B000607232H07042H00073901071C000907480A07162H0007390107FC3HFF0F0C04073E070A02000607480A07200004073C2H07000C05073E070A022H0007390107F53HFF0F000807480A07162H0007390107F73HFF0F0005073C2H073H000739010701000507362H07AB011F050750070A052H000739010701000507540A0710000607540A07092H000739010701000607540A071018060750070A062H000739010701000607540A0710002H07480A07162H0007390107F03HFF0F000507582H07022H0407582H073H000739010701000407362H07750004074F0107DE3HFF0F0605072D2H072H050407100A071F000407540A07232H000739010701000407540A07100305073E070A022H0007390107F43HFF0F0006072801070E2H00073901073E0B09073E070A082H00073901072H0009071B2H073H0007390107CF01000407540A07230305073E070A03000507582H07022H000739010701000507363H072H0407582H073H000739010701000407362H07270004074F0107AE3HFF0F28090750070A083C54010D070A092H0007390107AD3HFF0F000407280107BDFE2HFF0F2H000739010785FE2HFF0F002H073A2H073H000739010701002H07362H074C002H073701079AFE2HFF0F2H000739010705002H07540A07152H000739010701002H07540A0710000807260C07052H0007390107F63HFF0F2H0007390107ACFE2HFF0F000C07480A2H07000D07242H073H000739010706000A07540A0710000A07532H073H000739010701000A07362H07FE010C0A073E070A092H0007390107F73HFF0F000A07232H07042H000739010701000A07362H079E01000A07370107F63HFF0F2H000739010729000B07480A07252H0007390107023709073E070A082H0007390107FC3HFF0F0009073C2H072H0009073701072C2H0007390107F6FE2HFF0F002H07582H07022H000739010701002H07362H0710040607582H073H000739010701000607362H074C0006074F01079A01000607540A07232H000739010701000607540A0710032H073E070A052H0007390107F43HFF0F20060750070A052H000739010701000607540A07100B06073E070A060006071B2H072H000607540A07232H000739010701000607540A0710122H073E070A05002H07582H0702040607582H073H000739010701000607362H07020006074F0107112F99FE2HFF0F0147070A042H0007390107EB3HFF0F0B0A073E072H0A000A071B2H073H000739010701000A07362H07560B0A073E070A062H0007390107050C0A073E070A09000C07480A2H07000D07242H072H000A07232H07042H0007390107F53HFF0F000A071B2H073H000739010701000A07362H0785012H000739010702000607280107CF3HFF0F2H0007390107ED3HFF0F002H07280107D9FD2HFF0F2H0007390107AF3HFF0F0009071B2H073H00073901079B3HFF0F0B09073E070A082H0007390107FC3HFF0F372H073E070A06000907480A0721002H073C2H072H002H07370107ECFE2HFF0F2H000739010762000607480A072E0004073C2H073H000739010728000407540A07332H000739010701000407540A07102A040750070A042H00073901072C2H0007540A07242H0007390107012H0007540A07103600073E070A2H000207480A072E2H00073C2H073H0007390107012H0007362H07D401000107540A07402H000739010701000107540A0710000207480A07392H00073901074A17020750070A022H0007390107362H0007260C0701000107540A07022H000739010701000107540A071018010750070A012H000739010701000107540A0710000207480A07380001073A2H073H000739010701000107362H077A000207540A07092H000739010701000207540A071018020750070A022H000739010701000207540A0710000307540A07332A030750070A032H0007390107D83HFF0F040307100A073D2H00073901072C0305073E070A032H00073901072H000507582H07022H000739010701000507362H07402H0407582H072H0004074F0107A2FE2HFF0F000507540A07332A050750070A052H000739010701000507540A0710000207232H0704020107100A071A000207540A07332H000739010701000207540A07102A020750070A022H000739010701000207540A0710020107100A072D000207540A070918020750070A02000307480A073F000407480A073F000507480A073F000207232H07042H000739010701000207362H07D001020107100A07322H00073901070C11020750070A022H0007390107C83HFF0F3A020750070A022F0207432H0A311303073E070A022H00073901072H0003073A2H073H000739010701000307362H07E001000407540A07243604073E070A042H0007390107A93HFF0F000207540A07242H0007390107F23HFF0F00040750070A032H000739010701000407540A07102F0407432H0A08000407540A07232H0007390107CE3HFF0F0001073A2H0700010007100A07052H0007390107B53HFF0F132H073E070A01002H073A2H073H000739010701002H07362H078C018901E101070C2H07DF01082H07100A073D2H000739010782FE2HFF0F000607280107F0FC2HFF0F2H000739010791FD2HFF0FA887A81912FA009DDB6C2D00421A01006500B90C3H001D5407A61547D82E17D561A9B9093H0029103302F27B739F87C400016H00B90B3H00F8BBAAF5EB7A6ADF852D24B90F3H003DF42746E2BDB988E0325B0220DE36B90B3H00A2CDC437E574ECB3257A47B90A3H003FBED98011932AF32292C48H00B9123H00A168EB9AFBD2623441751769C43F6D2H3B65B9093H00FBEA35CC2C329741E5B90C3H00927D3467D9974D59698CD321B5B9103H00AE89F0939168701AB325B96FEB37001AB9093H00FE19C0A342EFBDE952B9083H00E1A82BDA8349E12DB9093H00A990B38272FBE71906B90C3H00783B2A757EFEE95C11B6B3D1B9083H0074A7C601043E1B70C4FF7H00B90B3H00DCAFEEC957B656252BD87DB9083H0091185B2HCAF3DA4FB90C3H005900E372AE71B30A4E8B0A76C4597H00B90F3H00257CCF8E85B99DA70981B12HDFDD1FB90A3H006AB54CDF8126C3627E91B9083H00B4E70641D7D4D631B90C3H001CEF2E09047C0CF8E99533A3C4017H00B90C3H00589B0AD58B9A0AF52F40D371B9093H005407A6614CCE3810DBB90B3H000FCE29105467D94D79909EB90A3H00F8BBAAF5FE7E69CA8537B90B3H00523DF4270AF4A9EBCFAB6DB9083H002F6E49B030CAACB6C4517H00B9083H0037961198AF336549B90B3H003FBED9803CAD34FA2383D9B90A3H0068EB9AA59F20600A3107C4757H00B90A3H0042ED6457584455998F47B9093H00CC5F5EF97FDCFF1250B9073H006786C1086553A9B90B3H009C6FAE8983F6966B6119A0B90D3H0051D81B8A212H1E9D7CA2C251F6B90E3H00D48726E1F774AE8A4FFB3CC0FED4B9133H00822DA4971A100B4F461C622HFA5C06AABCD810C4E8036H00B9093H00A7C60148261B71BFC7C4027H00B90A3H00EEC930D3442108D945E4B90E3H00185BCA95CBDA4A2C709513B161A2AFB9093H006621E86B457A1DABEAB9083H00E9D0F3C2322HBBD3B9093H00B1B87B6AEA13ACAB1BB94H00B90E3H00A00312FDC7827234F8FDDB29698AB9073H002E09701310E8F490B9103H00F756D158FC6FA1819A0AF83442D07131B9093H0007A66128F40508C963B9083H00CE2910336BC34278C4047H00B90C3H00F6F1F8BBF5AAEF2H70DA8137B9093H00523DF42732E0AAA79FB9073H00855C2F6E28C234B9083H00A2CDC437F468ECBEB90F3H004A152C3FDFBAF40A8438F82E88C41BB90A3H00EB9AA5FC3C7A1B391D25B9063H00ED6457361410B90F3H00FBEA35CC00019445F7F3095505EAA4B9083H00080B3AC5F20AD6FDB9093H00F093E20D7414B73DB4B90B3H001B8A556C1D9176ACC653F3B90E3H00D48726E1F774B4804BE620CDF5CBC24H00755FD54C0083B62H00F71901003500254H003F8B4FB8517BB62H00061F01002E6FA55634406A030C2D013H00073901070F2H00073901070E2H00073901070D2H0007260C07032H0007540A07012H0007480A07022H00070E2H07E6012H00070E2H07EC01F8019C01071C2H0769A501C601075F2H079C0139E10107542H07B10124860107322H077B11DF01070E2H079D01C201E00107042H075F290D07372H07CE01408601075C2H072H000207092H073H000739010701000207540A07018901DC01070C2H07D90115DD0107372H07DD010005070C2H072H000207002H073H00075B2H072H0002071A2H070094FDA73F748B0153B31E732H001A0100C900B9083H0082F5402301F492C9B90C3H00BAEDF89BF0DCFA74868CDF7DB90C3H00CEA14C8F58BC1FEE77EC656BB9093H0062D520034EE3D511EEB9073H00CDD87B76E80690C4027H00B9063H00D2C590F38BA9C4017H0090924H0078AE8F98767BB62H0008EB06003400190003002C000D00359D6BF12D5FA900582D013H00073901073E2H00073901073D2H00073901073C2H0007260C07042H0007540A07022H0007480A070A2H00070E2H07E5012H00070E2H07EE016B5F07042H0720287907012H07FE011CAD01073F2H07428101C20107292H07F501AB01840107022H072F8A018E0107122H078C012865071E2H071D2H00073901072F131F07042H071D0420011F0A07052H00073901070C2H000739010701D601F101071A2H07F101313007362H0731000407092H07042H000739010701000407540A0702000507132H07032H00073901072H0004073A2H073H000739010700012A0147070A042H000739010730000507092H07022H000739010701000507540A07028901DF01070C2H07DB012H00073901072H002H07480A07060005073C2H073H000739010701000507362H078201000507310107092H000739010721000107092H073H000739010701000107540A070208010756070A3H0007390107012H000739010731000107480A2H072H0007390107FD3HFF0F000407540A07022H000739010701000407540A07028901DE01070C2H07DC01000607540A07032H000739010701000607540A07020004073C2H072H000407370107DB3HFF0F2H00073901070112880107182H078401000407092H0703000407512H072H000107092H073H000739010701000107540A0702000107202H07012H000739010701000107540A0702000107370107E43HFF0F2H0007390107CD3HFF0F0004071A2H073H00073901071804E83HFF0F010D070A022H0007390107C53HFF0F000407092H07032H000739010701000407540A0702000407512H072H000407092H07058901DE01070C2H07DC010004071B2H073H000739010701000407362H07542H0007390107F33HFF0F00DC3HFF0F010D070A022H0007390107040704070F070A012H0007390107008901DA01070C2H07DD012H0007390107FA3HFF0F2H0007390107ED3HFF0F030207582H0703000207310107F93HFF0F2H0007390107058901DD01070C2H07DA012H0007390107FB3HFF0F000207092H07018901DC01070C2H07D9012H0007390107FB3HFF0F2H0007390107AE3HFF0FE2274F5B6AD301BD8E685300FD1901009D00B9093H002CDFA6B100E1636B80423H00205FA00242B9053H0087AE99B8BCC4017H00C48H00C4FF7H00244H00F12EEDD96A7BB62H00088506000200240022002300210025763E2E14BDB1002H2D013H0007390107142H0007390107132H0007390107122H0007260C07052H0007540A07022H0007480A2H072H00070E2H07E3012H00070E2H07EE015A6C072F2H07CC01666D074C2H07A10114B701075A2H076CB201AF0107172H07D6018C012007292H078101604F07372H07AA01B801AA0107242H07472H0007390107050001073F0107172H00073901071FD601F001071A2H07F101000107370107192H00073901070D2H0007092H073H0007390107012H0007540A0702000107480A0702000207480A07012H000739010703000307480A07032H00073901072H000107600107F23HFF0F2H00073C2H072H000107480A0704000207480A07052H0007390107F93HFF0F000207132H07018901DC01070C2H07D9010002071B2H073H0007390107ED3HFF0F0605071C2H07042H0007390107E83HFF0F000507092H07012H000739010701000507540A07028901DF01070C2H07D9012H0007390107F93HFF0F2H00073901074HFF0F000107052H0702000107540A073H0007390107E23HFF0F000107480A0704000207480A0704000307480A07042H00073901072H000407480A0704000407052H0705000307052H0704000207052H07032H0007390107F43HFF0F082F556334510004BD1E5400061A0100C100B90D3H0092F5987BED69CBF5DE52C3E1D5C48H00B90C3H0019BC9FC24BA9C6AB46BCD6AEB90F3H003DE0C3E62A99BD803096AF92086A82B90B3H000A6D10F378097D8D43E85BB9083H000B2E91346052FC34B9083H002346A94C4127C52BB90A3H003B5EC1643405B8023013B9083H00D97C5F828BE906EBB90C3H00F194779A94D3F5C77BCDFDD5B9083H0015B89BBE47B1C9A9B94H00B9133H002DD0B3D655BDCC962981A58B3591B193336587B90F3H0006690CEF7E1C769E7AE4426E44E854B90C3H001336993C7323D63C4727DF311C4H000FEA5E00197BB62H0009C503001C001B001DA564F665E122003B2D013H00073901073B2H00073901073A2H0007390107392H0007260C07052H0007540A070F2H0007480A070A2H00070E2H07E5012H00070E2H07ED01563307042H077B28C201072B2H077F5EA101070A2H072A8B010A07242H07F5018101F801072C2H07743516072F2H07045A4D07032H07A30160E801074D2H070D2H00073901072B000307092H07022H000739010701000307540A070F000107442H0703000107092H073H000739010701000107540A070F8901DB01070C2H07D9012H0007390107F73HFF0F2H00075B2H0700062H07100A070A2H000739010717022H07100A070D2H000739010712012H07432H0A062H000739010708070107582H0703002H074B2H073H00073901070B000107092H073H000739010701000107540A070F8901DB01070C2H07D9012H00073901070EDA012307042H071E012H07100A0700012H07100A0705022H07100A0703022H07100A070E2H0007390107EE3HFF0F012H07100A2H072H0007390107F93HFF0F022H07100A070C032H07100A07082H00073901072H052H07100A0709042H07100A07042H0007390107E83HFF0F000307092H07022H0007390107E83HFF0F0B2H07432H0A022H0007390107E03HFF0F6C2C075B2H072B000107092H073H000739010701000107540A070F000107310107012H000739010705000107092H07012H000739010701000107540A070F000107370107D03HFF0F2H0007390107DE3HFF0F0001074B2H0700D0013E07372H073F0105CF46FC45016088546E00FB1901002500B90A3H0037D6D118286F39495C8AC4017H00B90C3H009900E3B2EFF53043109D0A36B9053H00E5FC4F4E0AEF4H00A2B855CE1F7BB62H000BD101002C0BC8624B4AB703242D013H0007390107232H0007390107222H0007390107212H0007260C07032H0007540A07012H0007480A07052H00070E2H07E1012H00070E2H07ED01791407292H076D8C0127070B2H07F601F701AA01073F2H074564CA01074E2H07B401112A072D2H074192012307292H07ED01129001070B2H074C2H000739010714000807242H072H000807222H072H000307092H073H000739010701000307540A0701000307512H072H000807540A07028901E201070C2H07E0018901E301070C2H07D9010008073C2H072H000807370107012H0007390107F43HFF0F0003073F0107012H0007390107F43HFF0F062H07202H070207FC3HFF0F01212H073H0007390107F53HFF0F2H00075B2H072H000307480A07012H0007390107090002074B2H072H0003070C2H0700010207422H073H0007390107FA3HFF0F000507480A0701000307600107F23HFF0F0006070C2H072H000407412H073H0007390107FB3HFF0F000407540A072H000507480A07032H0007390107FA3HFF0F6C2E075B2H072B7163122B058F01A5715D2300F719010065007A4H00988C94EA657BB62H0003DE004F197365503E03072D013H0007390107102H00073901070F2H00073901070E2H0007260C07032H0007540A07012H0007480A07022H00070E2H07E1012H00070E2H07E8011CD70107242H07DF018D01BB0107492H07B701E301E90107152H07FE01DB01870107392H076FA7013907162H073138C10107112H07D10164B90107392H07208301B00107122H079D0119830107212H07A0010001070C2H0700CF016907372H0768313007362H0731ABCC4C21DABE0027A7EB5D00F71901004D00C34H00BABB6F8D347BB62H00028A009B7FD5754ED900032D013H00073901070E2H00073901070D2H00073901070C2H0007260C07052H0007540A07012H0007480A07022H00070E2H07E1012H00070E2H07E901BA0172072B2H072FED01F40107602H071E229C0107362H070C7D6307212H07A101620007012H075C1D4B072B2H074FB401E801074A2H078501313007362H0731681F56646E8200BEA6CF1B00F7190100E500724H005961C9623D7BB62H00030E00691AB37A9EAF03062D013H0007390107102H00073901070F2H00073901070E2H0007260C07032H0007540A07012H0007480A07022H00070E2H07E4012H00070E2H07EE01F7011507212H07F401496A075F2H07CD01B201BB0107132H071C764A07142H07E7016B9B01075A2H077DAF01F20107172H0756A901FC01074A2H07F0012H000739010701313007362H07318D015007312H074F3DDB0107372H07DA010D3B0C24E74900F2209B6000426F005EB72F741EB6027F30013H00073901075C2H00073901075B2H00073901075A2H0007260C070B2H0007540A07232H0007480A072A2H00070E2H07E1012H00070E2H07EB011EC40107442H079001D3011F07152H07AD014A6107572H07D5019E014D07252H076FCC010407202H070CC901820107392H077F3D3507112H071E3D62072A2H073C9301A40107262H071A5E5707212H07F5012H00073901074A003A073F01079D022H0007390107DD0589019002070C2H078502003707512H072H003807480A071B2H00073901079A0315920207372H07920289019102070C2H0792022H0007390107A206001E07260C0703001F073D2H07040020073D2H07022H000739010701002007540A0723002107480A0726002207480A0722002307480A07160024074B2H072H002507480A0726002607480A2H07002707480A0712002807480A071B002607600107F504003807132H073B2H0007390107021B3B070F070A382H0007390107FC3HFF0F41A206010D070A392H0007390107CD0189019402070C2H078502003B07512H073H00073901079705353607202H072A2H000739010701003607540A07232H000739010744003A07480A071B89019402070C2H079202003C07480A071B003A07600107D83HFF0F3D950207372H07DA01003907310107082H0007390107830489018B02070C2H0789022H000739010702003107132H07112H0007390107FC3HFF0F0031073A2H072H003107370107F6052H0007390107D40489019102070C2H0792022H0007390107F705323407122H07322H0007390107B30642010750070A01000207540A074439020750070A022H00073901071221000750070A3H0007390107012H0007540A0723000107540A07442H0007390107F73HFF0F25040750070A042H000739010701000407540A0723000507540A070C2H000739010701000507540A0723000607540A073B2H000739010701000607540A0723002H07540A07062H0007390107112H0007540A07442H0007390107EE3HFF0F000307540A07442H000739010716000C07540A07472H000739010701000C07540A0723000D07540A07232H000739010701000D07540A0723000E07540A070A2H000739010701000E07540A0723000F07540A071D001007132H070F0010073101071A2H00073901070C000807540A071F2H000739010701000807540A0723000907540A073H000739010701000907540A0723000A07540A071A000B07540A07482H0007390107EA3HFF0F2F030750070A03000407540A07402H0007390107D83HFF0F2H0007390107320036073101076E2H0007390107DF0403170750070A0F2H000739010701001707540A07232A180750070A0F2H000739010701001807540A072332190750070A0F2H00073901070E05160750070A0F2H0007390107F63HFF0F000F07132H07102B100750070A0F2H000739010701001007540A07233B110750070A0F0C120750070A0F1C130750070A0F15140750070A0F2H000739010701001407540A072313150750070A0F2H0007390107F23HFF0F381A0750070A0F2H000739010701001A07540A0723111B0755070A0E2H0007390107008901F501070C2H07F401001C073701078C032H00073901079303002A073A2H07002A24071C2H072H252A07012H07222H00073901070389018302070C2H07D90189018402070C2H07FE012H0007390107F93HFF0F232A072D2H072A022A0734070A2A8901FE01070C2H0783022H0007390107F9030036073F0107F7012H0007390107D104003407280107F2032H0007390107732H0007390107C605003407132H07322H00073901071A0010074B2H073H0007390107D83HFF0F003907480A073789019102070C2H0792022H000739010700C001C60107572H07C2012EA702015D070A392H0007390107823HFF0F001D07310107E6FE2HFF0F2H0007390107DD0420E804010D070A0E2H000739010791022H0007390107BF0420B104010D070A0E2H0007390107E101002007370107FD3HFF0F2H0007390107EC010B2D0756070A312H0007390107C1051E1C0750070A0F2H00073901078F043235072F2H07352H000739012H073234070A2H0732003407370107B6052H00073901070B89018C02070C2H078D023234072D2H072H323507012H07322H0007390107F73HFF0F323607082H07322H000739010700363507032H07352H000739010700353407112H073489018C02070C2H078D022H0007390107F23HFF0F2H0007390107F4FE2HFF0F6C66075B2H072B2H0007390107CC03003607332H07042H00073901070089018F02070C2H078E02362A071C2H072C2H000739012H07003A074B2H070089019402070C2H0786022H0007390107122H0007390107DA0189018F02070C2H07E10189019002070C2H078D022H000739010711003607132H070B003707540A072A2H000739010701003707540A0723003807132H07332H000739010706013607492H07023626071C2H07332H0007390107F43HFF0F89018E02070C2H078F020036070E2H07022H000739010708003907132H07052H0007390107EB3HFF0F003907582H0703003607522H073H0007390107EB3HFF0F003807480A070089019202070C2H0785022H0007390107E03HFF0F89019002070C2H078D02003807132H07352H0007390107EF3HFF0F00390728010780032H0007390107A3030030072801078E052H0007390107CE032H0007390107B601C001C80107572H07C6013BD204011F0A07302H00073901070A003407310107C63HFF0F2H0007390107A93HFF0F15890207372H0789022H00073901072H003007142H0702D601F001071A2H07F101003407480A071B003507132H072B003607480A071B003407600107900489019502070C2H07DC0189019602070C2H079202003E07480A07452H000739010702003C07310107C2042H000739010702003C073C2H073H0007390107FC3HFF0F2H0007390107CB03CF019C0107372H076807390719070A35003907370107A6FE2HFF0F2H0007390107AE03003307132H071289018D02070C2H078B02158E0207372H078E02003307302H073H00073901073H0007390107DD3HFF0F0033073701079C022H0007390107A8031185040147070A0E2H0007390107983HFF0F89019802070C2H07DA01004007132H073589019A02070C2H079602003F073C2H073H000739010701003F07362H07A501213F07352H073F2H0007390107002H3F07202H07242H000739010703023E0734070A3E8901FA01070C2H0797022H0007390107020038071D2H073E2H0007390107032H0007390107E2FD2HFF0F89019702070C2H0791022H0007390107EE3HFF0F213E07012H0722233E072D2H073E2H0007390107F53HFF0F333407202H07262H000739010701003407540A07231B340750070A342H000739010701003407540A072389018E02070C2H07E10189018F02070C2H078D02003707480A0700333807202H07262H000739010701003807540A072330380750070A382H000739010701003807540A0723003507332H07042H000739010701003507362H07CB0189018E02070C2H07E401003607540A072A2H000739010701003607540A072389019002070C2H078C0289019102070C2H078D02003507332H07042H0007390107CC0389018E02070C2H078B022H000739010721003707480A07370036071D2H0736003707480A073789019102070C2H078B020037071D2H0737003407332H07042H000739010701003407362H07D60189018D02070C2H078B023432071C2H072H323407202H07322H00073901072989018C02070C2H078D022H00073901072D0030073A2H073H00073901071D003807582H0701003407522H073H000739010701003407362H07C70189018D02070C2H078B022H0007390107E83HFF0F003407302H073H000739010701003407362H07A50189018D02070C2H078802003507132H073189018F02070C2H078C02003407302H073H000739010701003407362H07C60107E703010D070A312H00073901072189018F02070C2H078B022H00073901071C89018E02070C2H078B0289018F02070C2H078B0289019002070C2H078B022H00073901072H003807132H07320037073A2H073H000739010701003707362H075F89019102070C2H078B022H0007390107E33HFF0F04310750070A3017320750070A302D330750070A302H000739010701003307540A072389018D02070C2H078802003507132H07312H0007390107043432071C2H07320B3107432H0A2C89018902070C2H07F7012H00073901070489018F02070C2H078B022H0007390107DB3HFF0F89018D02070C2H078B022H0007390107E63HFF0F003107480A071B2H0007390107CF3HFF0F0035071D2H073589018F02070C2H078B022H0007390107BE3HFF0F2H0007390107CD03003207132H0730158C0207372H078C022H00073901070289018A02070C2H07DE012H0007390107FB3HFF0F003107302H072H001107310107A4FD2HFF0F2H0007390107D3022H0007390107D90389019302070C2H078E0289019402070C2H07F70189019502070C2H0792022H0007390107060E3B0750070A3B2H000739010701003B07540A0723003A071B2H073H00073901073H0007390107FEFD2HFF0F003B073A2H073H0007390107F83HFF0F003007480A071B4A3C07572H072B003207480A071B003007600107EF01003907310107FDFC2HFF0F2H000739012H0789019302070C2H07900289019402070C2H0791022H000739010702003907132H07132H0007390107FB3HFF0F033907582H07032H0007390107F73HFF0F2H000739010785030030073F0107BA022H000739010782FE2HFF0F29C8030147070A372H00073901070D0037073A2H073H000739010701003707362H0754003807182H073H0007390107F93HFF0F333407202H07202H000739010701003407540A07231B350750070A3430360750070A3489019002070C2H07E60189019102070C2H078E022H0007390107F33HFF0F2H00073901075E2H0007390107F1FD2HFF0F003507133H07003607132H0734003707480A072H0035073C2H073H000739010701003507362H0713353607202H072A2H000739010701003607540A0723003607370107A6FD2HFF0F2H0007390107DDFC2HFF0F003B07480A071B003C07132H07392H00073901072H003D07480A071B2H000739010702003A074B2H073H0007390107F93HFF0F003B07600107D8013D910207372H07DA01003007260C07052H00073901071E303107100A07352H00073901070C89018E02070C2H078B022H0007390107122C3107100A072C303107100A07182H00073901070D0033074B2H072H003407132H07312H000739010723003607582H0701003307412H072H003407260C2H072H0007390107F43HFF0F303107100A073F2H000739010700303107100A0724303107100A074A333107432H0A462H000739010708303107100A07342H000739010704003607132H07322H000739010710303107100A07142H000739010717303107100A07362H000739012H0789018B02070C2H07DE012H0007390107E93HFF0F0031074B2H073H0007390107E43HFF0F89018E02070C2H078B02003607132H07322H0007390107E73HFF0F303107100A073C303107100A0701303107100A0728303107100A070F2H0007390107F03HFF0F0034073C2H073H000739010701003407362H0742003407370107F3FD2HFF0F2H0007390107060032073C2H070089018C02070C2H078B0289018D02070C2H078B022H0007390107EF3HFF0F303107100A07192H0007390107CD3HFF0F2H0007390107C2028901FA01070C2H0798022H0007390107023F3A071C2H073E2H0007390107092H00073901079C0189019802070C2H07DA012H00073901072H004007132H073589019A02070C2H079702003F073C2H0700213F07352H073H3F07202H07242H0007390107F53HFF0F213F07012H0722233F072D2H073F023F0734070A3F2H0007390107EF3HFF0F001C07310107AA012H000739010798FD2HFF0F003907272H072H003807132H07392H00073901079302003907242H070089019102070C2H0792022H000739010790023D1C0750070A0F2H0007390107F63HFF0F003407132H07322H000739010702003307132H07112H0007390107FC3HFF0F0033073A2H073H000739010701003307362H0789010033073701078B022H0007390107512H00073901073D89018D02070C2H078502003407512H070012B50107182H0784012H0007390107A301C001C40107572H07C3013761011F0A071B2H0007390107D4FB2HFF0F89019202070C2H078E022H000739010782FC2HFF0F2C2D07100A074A2H0007390107170027070E2H0704002807480A0737002907242H072H002A07480A2H072H0007390107040028074B2H073H000739010722002C07260C07022H000739010718002B07260C07062H000739010700012707492H07042H0007390107F83HFF0F2C2D07100A07342C2D07100A07362C2D07100A073C2H0007390107162C2D07100A07182H0007390107FA3HFF0F0026074B2H073H0007390107EB3HFF0F2C2D07100A07142H000739010706332D07432H0A46002E07260C0704002F07260C070089018902070C2H07F8010030073701079E022H0007390107142C2D07100A07192H000739010704002B07480A073E2H0007390107E63HFF0F002D074B2H073H0007390107092C2D07100A07352C2D07100A073F2C2D07100A07242H0007390107D73HFF0F2C2D07100A07012H0007390107050029074B2H072H002A074B2H073H0007390107F33HFF0F2C2D07100A072C2H0007390107E33HFF0F2C2D07100A07282C2D07100A070F2H0007390107E43HFF0F2H0007390107B401001907370107C1FC2HFF0F2H0007390107A6FD2HFF0F1B3C0750070A3B2H000739010700303D0750070A3B2H000739010701003D07540A072389019702070C2H0791022H0007390107003E3C071C2H073D2H0007390107F6FC2HFF0F003707242H072H003307132H073789019002070C2H078B023730071C2H07352H0007390107A1FC2HFF0F89018F02070C2H078E023629071C2H07322H0007390107B33HFF0F89018D02070C2H07E40189018E02070C2H07E00189018F02070C2H078C02003707480A072C033407582H07042H000739010701003407362H078701003407370107AB3HFF0F2H00073901072527822H0147070A372H0007390107FFFC2HFF0F89018902070C2H07E50189018A02070C2H078002158B0207372H078B020030074F0107E1FC2HFF0F003107132H072C003107512H0700318CFC2HFF0F01212H07362H0007390107E53HFF0F0030073F0107A3FE2HFF0F2H00073901079BFC2HFF0F0026073F0107FFFB2HFF0F2H0007390107B73HFF0F46F30107372H07C3010012073101076D2H00073901073C0035073A2H073H000739010701003507362H07B301003607480A072C2H000739010700323707202H07292H000739010701003707540A0723003307332H07052H0007390107CCFC2HFF0F003607132H07322H0007390107F43HFF0F89018E02070C2H07EA012H0007390107FC3HFF0F89018D02070C2H07E1012H0007390107FC3HFF0F89018C02070C2H07E4012H0007390107FC3HFF0F003B073F0107E3FE2HFF0F2H00073901073189018F02070C2H07E40189019002070C2H07E1012H000739012H07003907480A072C89019302070C2H078502003607232H07052H000739010701003607362H0768003607370107FCFE2HFF0F2H00073901070289019102070C2H078C022H0007390107F73HFF0F2H0007390107C23HFF0F003907252H07352H0007390107F5FA2HFF0F3297FE2HFF0F01382H07312H0007390107F1FE2HFF0F0030075E0107B701003007132H070C89018A02070C2H078602003207182H073H0007390107FB3HFF0F12B50107182H07840111B6FC2HFF0F0147070A0E2H0007390107E8FE2HFF0F8901F601070C2H07F401001D07370107E2FB2HFF0F2H00073901075F003407540A07032H000739010702003407370107452H00073901070389018E02070C2H078C020034073A2H073H0007390107FB3HFF0F2H0007390107DAFC2HFF0F89018F02070C2H078E022H00073901078CFC2HFF0F89019402070C2H078502003B07512H073H0007390107D6FB2HFF0F003007280107D0FE2HFF0F2H0007390107D4FB2HFF0F003C07132H073A003B073A2H073H000739010701003B07362H0735003807132H073B2H00073901070289019402070C2H07DD012H0007390107F83HFF0F2H000739010752003007480A071B003107132H072B003207480A071B0030076001072C001207310107CFFA2HFF0F2H0007390107B8FB2HFF0F2H00073901074B003407540A0703003507132H07330034073A2H073H00073901072H003407370107C0FD2HFF0F2H0007390107D2FD2HFF0F89018F02070C2H07F7012H00073901070089019002070C2H0784020036073A2H073H000739010701003607362H075343360750070A362H000739010701003607540A0723003607310107BBFE2HFF0F2H0007390107D0FB2HFF0F89018B02070C2H07DF01003307132H07300032073A2H073H000739010701003207362H075E0B8EFD2HFF0F010D070A322H0007390107740030074F0107D53HFF0F89018A02070C2H0780022H000739010700158B0207372H078B022H0007390107FB3HFF0F89018902070C2H07E5012H0007390107FA3HFF0F3234070B2H07322H0007390107CAFC2HFF0F001D07480A07312H000739010786FA2HFF0F44270147070A372H000739010797FB2HFF0F00350737010792FE2HFF0F2H0007390107FFF92HFF0F0034073F0107FCF92HFF0F2H0007390107DBFE2HFF0F0030073F0107B73HFF0F2H00073901075989018A02070C2H0784022H000739010703003007480A071B2H0007390107FC3HFF0F00300760010795FD2HFF0F003207480A071B2H0007390107FD3HFF0F0034074B2H072H003507260C0701003607480A071B89019002070C2H078402003807480A071B003607600107FBFA2HFF0F003107132H070D89018B02070C2H0789022H00073901072H0031073A2H073H000739010701003107362H074A404D0147070A312H0007390107D13HFF0F001D07480A07092H000739010780FB2HFF0F003307182H072H003107302H073H000739010701003107362H07B2012H00073901073789018A02070C2H07EB0189018B02070C2H0789022H0007390107F83HFF0F2H0007390107DC3HFF0F89019202070C2H07E501003A07132H07362H00073901072H003B07182H072H0039074F0107B5FB2HFF0F3A280756070A3289018D02070C2H07EB0189018E02070C2H078B02003607132H072D003407302H073H0007390107983HFF0F003D07540A070D2H000739010701003D07540A0723003B073C2H073H000739010701003B07362H079901003B07370107ACFB2HFF0F2H000739010705003B07540A07102H000739010701003B07540A072389019502070C2H0793022H0007390107F33HFF0F2H0007390107D9F92HFF0F89018D02070C2H078B022H0007390107A7FB2HFF0F001307370107DFFD2HFF0F2H0007390107F4FE2HFF0F89018E02070C2H07E3012H00073901070089018F02070C2H07DC0189019002070C2H07E901003707062H072H003807480A07082H000739010702003407132H072E2H0007390107F73HFF0F003607582H07032H000739010701003607363H07003507412H072H003607132H0731003407302H073H0007390107EE3HFF0F3234073B2H07322H000739010718003307272H070089018D02070C2H07E50189018E02070C2H0789022H0007390107030031074B2H072H0032074B2H073H0007390107F93HFF0F158F0207372H078F022H00073901072H0034074F0107B1FA2HFF0F0012073101079DFE2HFF0F2H0007390107B9F92HFF0F3234074E2H07320034073701070A2H00073901070289018C02070C2H078D022H0007390107FB3HFF0F2H0007390107EC3HFF0F89018A02070C2H078502003107512H072H003007400107BCFA2HFF0F2H0007390107FFFA2HFF0F498FFE2HFF0F0147070A372H0007390107933HFF0F89018C02070C2H078D02323407322H0732003407370107D6FB2HFF0F2H0007390107893HFF0F323307202H0728003307370107A9FE2HFF0F2H00073901078BFB2HFF0F7CEF4730C31500A834A615000248007C30F91D5CB802122D013H0007390107112H0007390107102H00073901070F2H0007260C2H072H0007540A073H0007480A07012H00070E2H07E1012H00070E2H07E90171C90107142H07E7011A8401074D2H07128801EB01072E2H078401622C07542H0706EA01E10107142H07A6015C0107492H07769F01F50107312H0772A6019E014H0721F8011107372H0772FD017707582H07602H0007260C07012H0007532H073H0007260C073H00075F0A073H0007540A073H0007390107012H0007540A072H0001075F0A07008D015007312H074F2H0007582H073H0007390107012H0007362H0739CF016807372H0768F3B9F8609A0D00B32B252F00";end;Mh=1;else do if Mh~=4 then Z=string.sub;do Mh=2;end;else E=string.char;Mh=0x0003;end;end;end;end;end;local H=assert;do Mh=0;end;local U,Q=nil,(nil);while Mh~=2 do if Mh~=0 then Q=iL;Mh=2;else U=pL;Mh=0x1;end;end;local Y=(tonumber);local CL=(function(...)return M("#",...),{...};end);local p,W=table.insert,WL;local i,j=setmetatable,next;Mh=1;local o,e,F,t,k,s,c=nil,nil,nil,nil,nil,nil,nil;repeat do if not(Mh<=3)then if Mh<=5 then if Mh==4 then e=jL;Mh=0X00006;else t=(e and e()or oL);do Mh=0X7;end;end;else if Mh~=6 then k=4294967296;Mh=0;else F=XL.match;Mh=0x5;end;end;else if Mh<=1 then if Mh~=0X000 then o=VL;do Mh=3;end;else s={[0X0000]={[0]=0,1,0X2,0X3,4,cL,0X6,AL,8,0X9,eL,0Xb,0Xc,13,14,15},{[0]=1,0,3,0X0002,5,4,7,6,9,0X8,11,10,0xd,0Xc,tL,14},{[0X0]=JL,3,0,1,0X06,0X7,0x04,0X0005,0xA,0xb,8,9,0XE,15,12,0XD},{[0]=0x00003,2,0X1,0x00000,7,6,5,4,11,10,0x09,8,15,14,13,0Xc},{[0]=4,5,6,0X7,0X0,1,2,3,0Xc,0xD,14,0X0F,8,0X9,10,11},{[0]=5,4,0x007,0X6,0x1,0,3,0X2,0Xd,12,tL,vL,9,0X8,11,10},{[0]=rL,7,4,5,2,3,0X0,0X1,14,0x000F,12,0X00D,0X0A,0X00B,BL,0X9},{[0]=0X0007,6,0X00005,0X4,0X3,JL,hL,0,0x00f,14,13,0X000C,0X00b,eL,0x9,8},{[0X0]=8,9,0X000A,11,12,13,14,0X0F,0X0,0X001,0X2,3,0X4,0X5,0x6,0X7},{[0X0]=0x9,8,0xb,0X0a,IL,kL,0XF,0XE,0X1,0,3,0x2,0X05,SL,0X7,0X6},{[0]=0X0000A,0X00B,0X00008,0x9,0x0000E,0X0000F,12,IL,2,KL,0,0X0001,rL,7,4,0X05},{[0X0]=11,0xA,dL,8,0Xf,vL,0XD,12,0X3,0X002,0X1,0,AL,6,5,4},{[0X0]=12,13,14,tL,0X8,9,10,11,4,5,6,0x7,yL,0X001,2,0X003},{[yL]=0Xd,0X0000c,15,0Xe,0x9,BL,zL,eL,5,0X0004,7,6,1,0x0,0X3,2},{[0x0]=0XE,0xF,0X0000c,13,0x000a,11,8,dL,0X6,0X7,0X4,0x5,0X2,0x03,0X000,0x001},{[0]=0X0F,14,IL,12,11,0X0000A,0X00009,8,0X7,6,5,0X4,0X3,JL,1,0x0000}};do Mh=2;end;end;else do if Mh~=2 then Mh=0x4;else do c=aL or LL.unpack;end;break;end;end;end;end;end;until false;local m,r,B,I,S,d=type,nil,nil,nil,nil,nil;for lr=0x0,4 do do if lr<=1 then if lr~=0 then B=function()local lO=Q(v,J,J);J=J+1;return lO;end;else do v=U(Z(v,cL),"..",function(hC)if Q(hC,0x002)~=0X48 then local od=(nil);do for OU=0X0,1 do if OU==0X0 then od=E(Y(hC,0X10));else do if r then local x0=nil;local I0=(0x2);repeat if I0<=0x0 then return x0;else do if I0==0X1 then do r=nil;end;I0=0;else do x0=q(od,r);end;I0=1;end;end;end;until(false);else return od;end;end;end;end;end;else local Zs=0X1;do while'\067\037Y?\122\111['do if Zs~=0 then r=Y(Z(hC,1,1));do Zs=0;end;else return sL;end;end;end;end;end);end;end;else do if lr<=0X02 then I=2147483648;else if lr==0X003 then S=JL^0X000034;else d=I-0X1;end;end;end;end;end;end;local K,y,h,a=k-1,{[0X0000]=0X0001},nil,(nil);do for eC=0,1 do if eC~=0 then a=function()local pA,RA,mA=0X00002,nil,nil;while 108782846 do do if pA<=0X0 then do if mA>=I then do mA=mA-k;end;end;end;pA=0X001;else if pA==1 then do return mA*k+RA;end;else do RA,mA=h(),h();end;do pA=0;end;end;end;end;end;end;else h=function()local wp,np,Lp,zp=Q(v,J,J+0X003);for j9=0,0X1 do if j9==0 then J=J+0X4;else do return zp*0X1000000+Lp*0X10000+np*256+wp;end;end;end;end;end;end;end;Mh=0X1;local A,PL,z,L,w=nil,nil,nil,nil,(nil);repeat if Mh<=2 then if not(Mh<=0)then do if Mh~=1 then w=(xL or bit32);do Mh=0X00006;end;else A=wL;Mh=3;end;end;else z=function(M8,d8,X8)local N8=(nil);do for cj=0X0,0X2 do if cj<=0 then N8=(M8/y[d8])%y[X8];else do if cj==1 then do N8=N8-N8%1;end;else do return N8;end;end;end;end;end;end;end;Mh=0X5;end;elseif not(Mh<=3)then do if Mh==0X4 then do local bp=0X2;do for fH=0x01,31 do(y)[fH]=bp;bp=bp*JL;end;end;end;Mh=0;else L=function()local nu,Fu=nil,(nil);for bb=0X0,1 do if bb==0X000 then nu=h();else Fu=h();end;end;if nu==0X0 and Fu==0 then do return 0;end;end;local Mu=((-hL)^z(Fu,31,1));local Iu=(0X1);local hu=z(Fu,0X0014,11);local Cu=z(Fu,0X0,0X14)*k+nu;local ju=(0X000);repeat do if ju~=0x0 then return Mu*(0X2^(hu-1023))*(Cu/S+Iu);else if hu==0 then if Cu==0 then return Mu*0;else local eD=0;while eD<=1 do if eD==0X0 then do hu=0X0001;end;eD=1;else do Iu=0X0;end;do eD=2;end;end;end;end;elseif hu==0X00007ff then do if Cu==0 then return Mu*(0X0/0);else return Mu*(0X1/yL);end;end;end;ju=0x0001;end;end;until(false);end;do Mh=2;end;end;end;else PL=0x001;Mh=4;end;until Mh>=6;local x=w and w.bxor or function(w3,S3)w3=w3%k;local d3=(0x000);local f3=(nil);while d3<0X002 do do if d3==0X0 then f3=0X1;d3=1;else do S3=S3%k;end;d3=2;end;end;end;local P3=(0X00);d3=0X00001;do repeat if d3~=0 then while w3>0X00 and S3>0 do local Wg,rg,Ig=1,nil,(nil);while Wg<=0X3 do do if not(Wg<=0X0001)then do if Wg==2 then Ig=S3%0x10;Wg=0X000;else w3=(w3-rg)/0X10;Wg=0X4;end;end;else if Wg==0X0 then do P3=P3+s[rg][Ig]*f3;end;do Wg=3;end;else rg=w3%0X10;do Wg=2;end;end;end;end;end;do Wg=0;end;do repeat if Wg~=0X0 then f3=f3*16;Wg=0X2;else S3=(S3-Ig)/0X10;Wg=1;end;until Wg>1;end;end;d3=0x0;else return P3+w3*f3+S3*f3;end;until false;end;end;local G=w and w.band or function(Pc,mc)local Ic=(1);while Ic<2 do do if Ic==0 then do mc=mc%k;end;Ic=0X0002;else Pc=Pc%k;Ic=0;end;end;end;return((Pc+mc)-x(Pc,mc))/2;end;local u=w and w[GL]or function(Vq,kq)local oq=1;repeat do if oq==0 then do kq=kq%k;end;break;else Vq=Vq%k;oq=0X000;end;end;until(false);return K-G(K-Vq,K-kq);end;local D,l=w and w.bnot or function(Ve)return K-(Ve%k);end,(w and w[uL]);local R=w and w[DL];l=l or function(gO,QO)if QO>=lL then return 0X0;end;local XO=0x0001;while-0X6BA61bfA do if XO==0x0 then return(gO*y[QO])%k;else if QO<0 then return R(gO,-QO);end;XO=0;end;end;end;do Mh=0X0;end;local N,O=nil,(nil);while 0x5458A5a0 do if Mh<=0x000 then R=R or function(G8,A8)local l8=0;do repeat if l8==0x0 then if not(A8>=0X20)then else return 0X0;end;l8=0x1;else if not(A8<0)then else return l(G8,-A8);end;l8=2;end;until l8>0X0001;end;l8=0X000;local V8=(nil);repeat if l8==0 then do V8=(G8%k/y[A8]);end;l8=1;else return V8-V8%0x00001;end;until(false);end;Mh=1;elseif Mh~=1 then O={[1]=0x5,[7]=0X0007,[9]=1,[5]=0X1,[0x7]=8,[0x00008]=0X2,[6]=7,[0X7]=5,[0x2]=AL,[3]=0x4,[6]=0};break;else N=function()local YN=(0);local dN=0X0;do while true do local YG=(Q(v,J,J));J=J+0X001;dN=u(dN,l(G(YG,127),YN));if G(YG,128)~=0 then else return dN;end;YN=YN+7;end;end;end;Mh=0x0002;end;end;local g=(function()local Ab=(0x000);local yb=(nil);do while true do if Ab<=0X0 then do yb=N();end;do Ab=0X002;end;else if Ab==0x1 then return yb;else if yb>d then return yb-k;end;Ab=1;end;end;end;end;end);local b=B();local HL=B();local ML=function(CF)local JF=0X1;local cF,nF=nil,nil;do repeat do if JF==0X0 then nF=x(cF[0X0001],HL);JF=2;else cF={Q(v,J,J+3)};JF=0;end;end;until JF>=2;end;local wF=x(cF[2],HL);local yF=(x(cF[0X0003],HL));local OF=(x(cF[4],HL));JF=0;repeat if JF==0X0 then HL=(177*HL+CF)%256;JF=0x1;else do J=J+4;end;JF=2;end;until JF==0X002;return OF*16777216+yF*0X10000+wF*0X000100+nF;end;local X=RL.wrap;local mL={};Mh=0X2;local fL,T,YL=nil,nil,nil;while Mh<3 do if Mh<=0 then do T={0x1,0x3,2};end;Mh=1;else if Mh==0X1 then YL=function(bO)local xO=h();local sO=nil;local PO=0X0001;repeat do if not(PO<=1)then if PO==0X2 then do J=J+xO;end;PO=3;else do return sO;end;end;else do if PO~=0X0 then do sO='';end;PO=0;else for C8=0X01,xO,0X1F3d do local B8=C8+0X001f3D-1;if B8>xO then do B8=xO;end;end;local I8,h8=0,(nil);while I8<=2 do if not(I8<=0X0000)then if I8~=1 then for wq=0x00001,#h8 do local Bq=(0);while Bq<2 do if Bq~=0x00000 then b=(bO*b+0Xe3)%0X100;Bq=2;else do h8[wq]=x(h8[wq],b);end;Bq=0X01;end;end;end;I8=1;else sO=sO..E(c(h8));I8=0X003;end;else h8={Q(v,J+C8-1,J+B8-0X1)};I8=0X2;end;end;end;PO=0x2;end;end;end;end;until false;end;Mh=0x0003;else do fL={};end;Mh=0;end;end;end;local f=error;Mh=0x0003;local ZL,QL,EL=nil,nil,(nil);do while 0.18765027583224958 do do if Mh<=0X01 then do if Mh==0X0 then function ZL(uH,bH,zH)local VH,nH=uH[0X8],(uH[2]);local lH=(uH[0X3]);local LH,xH=uH[0X5],(uH[4]);local EH,kH=uH[7],uH[0X6];local KH=i({},{__mode="v"});local vH,mH=uH[9],(nil);mH=function(...)local pG=0X01;local cG=(e and e()or _ENV);local qG=(cG==t and bH or cG);local iG={};local XG,MG=CL(...);local JG=0X000;do XG=XG-0X0001;end;for lE=0X0,XG do do if lH>lE then iG[lE]=MG[lE+1];else do break;end;end;end;end;(fL)[3]=uH;(fL)[0X4]=iG;if not LH then MG=nil;else if xH then iG[lH]={n=XG>=lH and XG-lH+0X1 or 0x0,c(MG,lH+1,XG+0X1)};end;end;if qG~=cG then if not(A)then _ENV=qG;else A(mH,qG);end;end;local YG,rG,oG,bG=C(function()repeat local Ab=VH[pG];local gb=Ab[6];do pG=pG+1;end;do if gb<0X30 then if gb>=24 then if not(gb<0X24)then do if gb<0X002a then do if not(gb>=39)then if not(gb>=37)then iG[Ab[1]]=true;else if gb==0X00026 then local tn=nH[Ab[3]];local En=(tn[0X01]);local qn=nil;local Tn=#En;do if not(Tn>0)then else do qn={};end;do for qy=0X1,Tn do local ry=(En[qy]);if ry[0X001]==0 then qn[qy-1]={iG,ry[0X02]};else qn[qy-1]=zH[ry[0X2]];end;end;end;(p)(KH,qn);end;end;do(iG)[Ab[1]]=ZL(tn,qG,qn);end;else do(iG)[Ab[1]]=-iG[Ab[0X3]];end;end;end;else if not(gb>=0X28)then iG[Ab[1]]=false;else if gb~=41 then local c_=(Ab[0X01]);local j_,k_,u_=iG[c_]();if j_ then(iG)[c_+0X01]=k_;iG[c_+0X02]=u_;pG=Ab[3];end;else local MW=Ab[0X1];local FW=X(function(...)o();for mz,Qz,Kz,Gz,bz,Cz,Nz,Bz,dz,yz in...do(o)(true,{mz,Qz,Kz,Gz,bz,Cz,Nz,Bz,dz,yz});end;end);FW(iG[MW],iG[MW+0X0001],iG[MW+0x2]);JG=MW;iG[MW]=FW;do pG=Ab[0X3];end;end;end;end;end;else do if not(gb>=45)then if gb<43 then(iG)[Ab[0X00001]]=G(iG[Ab[0X03]],iG[Ab[2]]);else if gb~=44 then do iG[Ab[1]]=u(iG[Ab[0X03]],iG[Ab[2]]);end;else do iG[Ab[1]]=R(iG[Ab[3]],iG[Ab[0X00002]]);end;end;end;else if not(gb<46)then if gb==47 then(iG)[Ab[0X1]]=iG[Ab[3]]/iG[Ab[2]];else local iH=(iG[Ab[3]]/iG[Ab[2]]);do(iG)[Ab[0X01]]=iH-iH%1;end;end;else iG[Ab[1]]=iG[Ab[0X3]]+iG[Ab[2]];end;end;end;end;end;else do if gb>=0x01E then if gb<33 then if gb>=31 then do if gb~=0X000020 then if not(not(Ab[4]<iG[Ab[2]]))then else do pG=Ab[1];end;end;else do(iG)[Ab[1]]=iG[Ab[0X00003]][iG[Ab[2]]];end;end;end;else do repeat local LX,lX,XX=KH,iG,Ab[0x1];if not(#LX>0)then else local rU=({});for pb,lb in j,LX do for wK,pK in j,lb do if not(pK[0X1]==lX and pK[2]>=XX)then else local L3=(pK[2]);do if not rU[L3]then rU[L3]={lX[L3]};end;end;(pK)[0x1]=rU[L3];pK[0X2]=0X1;end;end;end;end;until true;end;end;else if not(gb<0x0022)then do if gb~=0X023 then do repeat local pa,Ia=KH,(iG);if#pa>0X000 then local iH={};do for AN,iN in j,pa do for Dg,tg in j,iN do if not(tg[0X1]==Ia and tg[2]>=0X0000)then else local ez=(tg[2]);if not(not iH[ez])then else iH[ez]={Ia[ez]};end;tg[0X1]=iH[ez];tg[2]=0x1;end;end;end;end;end;until true;end;local fZ=(Ab[1]);return false,fZ,fZ;else local o0=Ab[1];JG=o0+Ab[0X3]-1;iG[o0]=iG[o0](c(iG,o0+0X1,JG));JG=o0;end;end;else if iG[Ab[3]]==iG[Ab[2]]then else pG=Ab[0x001];end;end;end;elseif not(gb<27)then if gb<28 then local j4=(Ab[1]);iG[j4](iG[j4+0X01]);JG=j4-0x1;else do if gb~=0x1D then do(iG[Ab[1]])[iG[Ab[3]]]=iG[Ab[2]];end;else local p4=Ab[3];iG[Ab[0x001]]=iG[p4]..iG[p4+0X1];end;end;end;else if gb<25 then do if Ab[0X002]~=0X012 then do(iG)[Ab[1]]=nil;end;else pG=pG-0X1;do(VH)[pG]={[0X00001]=(Ab[1]-0X00084),[6]=0X1a,[0X03]=(Ab[3]-132)};end;end;end;else if gb==26 then do if Ab[2]~=0xd6 then repeat local Cz,vz=KH,(iG);if not(#Cz>0X0)then else local Xc=({});do for Jr,Sr in j,Cz do for F3,i3 in j,Sr do if not(i3[1]==vz and i3[0X2]>=0X0)then else local eG=(i3[0x2]);if not Xc[eG]then(Xc)[eG]={vz[eG]};end;do i3[0X1]=Xc[eG];end;i3[0X2]=1;end;end;end;end;end;until true;do return false,Ab[0X1],JG;end;else pG=pG-1;do VH[pG]={[1]=(Ab[0X01]-0XF0),[6]=91,[3]=(Ab[3]-240)};end;end;end;else iG[Ab[1]]=iG[Ab[3]]~=Ab[7];end;end;end;end;end;else if not(gb<12)then if gb>=18 then do if gb<21 then if not(gb>=19)then iG[Ab[1]]=iG[Ab[0x00003]]~=iG[Ab[0X2]];else if gb~=0X00014 then iG[Ab[1]]=iG[Ab[0X003]];else do(fL)[Ab[0X3]]=iG[Ab[1]];end;end;end;else do if gb>=0X16 then do if gb~=23 then local vq=Ab[0X0003];local Xq=iG[vq];do for cM=vq+0X01,Ab[2]do do Xq=Xq..iG[cM];end;end;end;(iG)[Ab[0X001]]=Xq;else do iG[Ab[0X0001]]=Ab[4];end;end;end;else do repeat local a1,o1=KH,(iG);if not(#a1>0X0)then else local Ys=({});do for iK,AK in j,a1 do for U7,X7 in j,AK do do if X7[0x1]==o1 and X7[0X2]>=0X0 then local u7=X7[2];if not(not Ys[u7])then else(Ys)[u7]={o1[u7]};end;(X7)[0X001]=Ys[u7];do(X7)[2]=1;end;end;end;end;end;end;end;until true;end;local Hi=(Ab[0X1]);do return false,Hi,Hi+Ab[0X3]-0x0002;end;end;end;end;end;elseif not(gb>=0Xf)then if gb>=0x00D then if gb==14 then iG[Ab[1]]={c({},0X1,Ab[3])};else if iG[Ab[0x3]]~=Ab[7]then else pG=Ab[1];end;end;else do if Ab[2]==0X89 then do pG=pG-1;end;(VH)[pG]={[1]=(Ab[0X1]-217),[6]=19,[0X3]=(Ab[3]-217)};else local mn=XG-lH;local Bn=(Ab[0X1]);if mn<0X0 then do mn=-1;end;end;for JK=Bn,Bn+mn do(iG)[JK]=MG[lH+(JK-Bn)+1];end;do JG=Bn+mn;end;end;end;end;else do if not(gb>=0X00010)then iG[Ab[0X0001]]=iG[Ab[0X3]]+Ab[0x7];else if gb==0X00011 then(iG)[Ab[1]]=iG[Ab[0X3]]-iG[Ab[2]];else(iG[Ab[0x1]])[Ab[0x4]]=iG[Ab[0X2]];end;end;end;end;else do if not(gb>=6)then if not(gb<0x3)then if not(gb>=4)then(iG)[Ab[0X1]]=iG[Ab[0X3]]%iG[Ab[0x2]];else do if gb~=5 then if Ab[2]==0xDa then pG=pG-0X001;VH[pG]={[0X6]=0x15,[1]=(Ab[0X1]-28),[0X3]=(Ab[3]-28)};elseif Ab[0x2]==19 then pG=pG-0X00001;VH[pG]={[0x1]=(Ab[0x1]-27),[0x6]=0X4c,[0X03]=(Ab[3]-0X1b)};else(iG)[Ab[0x01]]=not iG[Ab[3]];end;else local mR=zH[Ab[0X3]];(mR[1])[mR[2]]=iG[Ab[1]];end;end;end;else if gb<1 then do repeat local JQ,EQ=KH,iG;if#JQ>0 then local Oe={};for Lz,Az in j,JQ do for yb,ob in j,Az do if not(ob[1]==EQ and ob[0X2]>=0x0)then else local gC=(ob[2]);do if not Oe[gC]then(Oe)[gC]={EQ[gC]};end;end;ob[1]=Oe[gC];(ob)[2]=1;end;end;end;end;until true;end;return true,Ab[0X1],0X000;else if gb~=0X2 then do iG[Ab[0X1]]=iG[Ab[0X3]]*iG[Ab[0X2]];end;else do if not(not(iG[Ab[0X3]]<iG[Ab[0X2]]))then else do pG=Ab[1];end;end;end;end;end;end;else if not(gb<9)then if gb>=10 then if gb==11 then iG[Ab[0X0001]]=iG[Ab[3]]>=iG[Ab[2]];else iG[Ab[1]]=iG[Ab[0X3]]==iG[Ab[2]];end;else local Kh=(zH[Ab[3]]);(iG)[Ab[0x1]]=Kh[1][Kh[0X2]];end;else if gb>=7 then if gb==0X8 then iG[Ab[0X0001]]=iG[Ab[0X3]]^iG[Ab[2]];else if not(not(iG[Ab[0X3]]<=iG[Ab[2]]))then else do pG=Ab[0X1];end;end;end;else JG=Ab[0X1];do iG[JG]=iG[JG]();end;end;end;end;end;end;end;else if not(gb>=72)then do if not(gb>=0X3c)then if gb>=54 then do if gb<57 then if gb>=55 then if gb~=56 then if Ab[0X02]==61 then do pG=pG-0X1;end;(VH)[pG]={[0X06]=26,[0X3]=(Ab[3]-218),[0X00001]=(Ab[1]-0X00da)};elseif Ab[2]==0X0015 then pG=pG-1;VH[pG]={[3]=(Ab[0X03]-217),[0X00006]=24,[1]=(Ab[1]-0XD9)};elseif Ab[2]==0X000046 then pG=pG-0X001;VH[pG]={[3]=(Ab[0X003]-0xC3),[0X00006]=0x0001e,[1]=(Ab[0x001]-0xC3)};elseif Ab[0X2]==0XcF then pG=pG-0X1;VH[pG]={[0X06]=26,[0X1]=(Ab[0X1]-104),[3]=(Ab[3]-104)};elseif Ab[2]~=0xd0 then if not(not iG[Ab[1]])then else do pG=Ab[0X3];end;end;else pG=pG-0X1;(VH)[pG]={[0x1]=(Ab[0X0001]-0X3d),[0x0003]=(Ab[3]-0X003D),[6]=0X22};end;else if iG[Ab[3]]==iG[Ab[2]]then pG=Ab[1];end;end;else if Ab[2]==0X0031 then pG=pG-1;VH[pG]={[0X1]=(Ab[1]-0X30),[0X0003]=(Ab[0X3]-48),[0x006]=0X5b};elseif Ab[2]~=0X0000e1 then for E8=Ab[0X01],Ab[0X00003]do iG[E8]=nil;end;else do pG=pG-0x1;end;VH[pG]={[0X006]=0X1E,[0X3]=(Ab[0X003]-176),[1]=(Ab[1]-0X00b0)};end;end;else if not(gb<0X003a)then if gb==0X3B then(iG)[Ab[0x01]]=iG[Ab[0X03]]>iG[Ab[2]];else local TO=(Ab[1]);do iG[TO]=iG[TO](iG[TO+1]);end;JG=TO;end;else pG=Ab[0X00003];end;end;end;else if gb>=0X00033 then if not(gb>=52)then local QH=Ab[0x001];do JG=QH+Ab[3]-1;end;(iG[QH])(c(iG,QH+1,JG));JG=QH-0X01;else if gb~=53 then iG[Ab[1]]=iG[Ab[3]]%Ab[0X7];else iG[Ab[0X1]]=x(iG[Ab[3]],iG[Ab[2]]);end;end;else if gb>=49 then if gb~=0x000032 then if Ab[2]==141 then pG=pG-1;(VH)[pG]={[0X1]=(Ab[1]-0X004F),[0X6]=12,[3]=(Ab[3]-0x4F)};elseif not(iG[Ab[1]])then else pG=Ab[3];end;else(iG)[Ab[0X1]]=iG[Ab[0X003]]<=iG[Ab[2]];end;else local b9=Ab[1];(iG[b9])(iG[b9+1],iG[b9+2]);JG=b9-1;end;end;end;else do if not(gb>=66)then if gb<0X3f then if gb>=0X3d then if gb~=62 then iG[Ab[1]]=fL[Ab[0x3]];else local Ih=(iG[Ab[3]]);local Qh=Ab[0X1];iG[Qh+1]=Ih;(iG)[Qh]=Ih[Ab[0X0007]];end;else local Pg=(Ab[1]);(iG)[Pg]=iG[Pg](iG[Pg+1],iG[Pg+2]);do JG=Pg;end;end;else if not(gb>=64)then local HH=(Ab[0X0001]);local FH,sH=iG[HH]();do if FH then do pG=Ab[0x3];end;(iG)[HH+0X00003]=sH;end;end;else if gb==0X41 then local QP=(Ab[0X1]);do(iG)[QP]=iG[QP](c(iG,QP+0X001,JG));end;JG=QP;else local Xe=Ab[1];local fe,Me=iG[Xe]();if fe then(iG)[Xe+1]=Me;pG=Ab[0X3];end;end;end;end;else if gb<0x00045 then do if gb<0x043 then local jw,Yw=Ab[1],(Ab[2]-1)*0X32;local Sw=iG[jw];do for ft=1,JG-jw do(Sw)[Yw+ft]=iG[jw+ft];end;end;else do if gb~=0X000044 then iG[Ab[0X00001]][Ab[0X4]]=Ab[0X7];else local sC=(Ab[0X0001]);local CC=(Ab[3]);JG=sC+CC-1;do repeat local P4,Q4=KH,iG;if not(#P4>0)then else local Ho=({});do for Jm,gm in j,P4 do do for KV,eV in j,gm do if not(eV[0X001]==Q4 and eV[2]>=0)then else local BF=eV[0x00002];if not(not Ho[BF])then else Ho[BF]={Q4[BF]};end;(eV)[1]=Ho[BF];eV[2]=1;end;end;end;end;end;end;until 0X54AE7EF3;end;return true,sC,CC;end;end;end;end;else do if not(gb<70)then do if gb==0X0047 then do if iG[Ab[0X3]]==Ab[0X007]then else pG=Ab[1];end;end;else if Ab[4]<=iG[Ab[0X00002]]then pG=Ab[1];end;end;end;elseif not(iG[Ab[3]]<=iG[Ab[0X2]])then else do pG=Ab[0X00001];end;end;end;end;end;end;end;end;else if gb<84 then if gb>=78 then if gb<0X051 then if not(gb>=0X4F)then do iG[Ab[1]]=iG[Ab[0X3]]<iG[Ab[0x2]];end;else if gb==80 then do(iG)[Ab[0x001]]=iG[Ab[3]][Ab[0X7]];end;else local Uj=Ab[1];local uj=(X(function(...)(o)();do for T2,X2 in...do(o)(true,T2,X2);end;end;end));(uj)(iG[Uj],iG[Uj+0X1],iG[Uj+2]);do JG=Uj;end;(iG)[Uj]=uj;pG=Ab[0X3];end;end;else if not(gb>=0X052)then repeat local oN,fN=KH,iG;if not(#oN>0x00)then else local SK={};do for rW,RW in j,oN do for yx,Ux in j,RW do if Ux[1]==fN and Ux[2]>=0X0000 then local ur=Ux[0X2];if not(not SK[ur])then else(SK)[ur]={fN[ur]};end;do Ux[0X1]=SK[ur];end;do Ux[2]=0x1;end;end;end;end;end;end;until true;do return true,Ab[0X1],1;end;else if gb~=0X00053 then local gG=Ab[0X00001];(iG[gG])(c(iG,gG+1,JG));JG=gG-0X1;else JG=Ab[1];(iG[JG])();JG=JG-0X001;end;end;end;else do if gb>=0x4B then if gb<76 then do iG[Ab[0X1]]={};end;else if gb~=0x4D then do(iG)[Ab[1]]=#iG[Ab[0X3]];end;else do(iG)[Ab[1]]=D(iG[Ab[3]]);end;end;end;else if not(gb<73)then do if gb~=0X4a then local I3=(Ab[2]-1)*0X32;local i3=Ab[0x1];local a3=iG[i3];for h5=1,Ab[3]do a3[I3+h5]=iG[i3+h5];end;else local TG=Ab[0X0001];local DG,FG=iG[TG]();if not(DG)then else do for aW=1,Ab[2]do do(iG)[TG+aW]=FG[aW];end;end;end;pG=Ab[0X3];end;end;end;else iG[Ab[1]]=Ab[4];end;end;end;end;elseif gb>=90 then if not(gb>=93)then if not(gb<91)then if gb~=92 then if Ab[2]~=0X6c then repeat local k_,b_=KH,(iG);if#k_>0x00 then local iH={};for WG,hG in j,k_ do for SB,eB in j,hG do do if not(eB[0x1]==b_ and eB[0X02]>=0X0000)then else local HK=eB[0X002];do if not(not iH[HK])then else do(iH)[HK]={b_[HK]};end;end;end;(eB)[0X1]=iH[HK];do(eB)[0X2]=0X1;end;end;end;end;end;end;until true;return;else pG=pG-1;(VH)[pG]={[0X6]=26,[0X3]=(Ab[3]-43),[0x001]=(Ab[1]-43)};end;else if not(iG[Ab[0x3]]<iG[Ab[2]])then else pG=Ab[1];end;end;else(iG)[Ab[0X1]]=l(iG[Ab[3]],iG[Ab[0X2]]);end;else if not(gb<95)then if gb==96 then local s7=(Ab[0x1]);local e7=iG[s7+2];local p7=(iG[s7]);local E7=iG[s7+1];(iG)[s7]=X(function()do for dc=p7,E7,e7 do(o)(true,dc);end;end;end);pG=Ab[3];else do qG[Ab[4]]=iG[Ab[1]];end;end;else if gb==94 then local md=(Ab[1]);local td=(X(function(...)o();do for rc in...do o(true,rc);end;end;end));td(iG[md],iG[md+0X1],iG[md+2]);JG=md;iG[md]=td;do pG=Ab[0X3];end;else if not(iG[Ab[0x3]]<=Ab[7])then do pG=Ab[0X1];end;end;end;end;end;else if not(gb<0x000057)then if not(gb>=88)then if Ab[0X2]==0X4a then pG=pG-0X1;VH[pG]={[0X1]=(Ab[0X001]-11),[6]=76,[0X03]=(Ab[0x3]-0Xb)};elseif Ab[2]==192 then pG=pG-1;do VH[pG]={[1]=(Ab[1]-0X08d),[0X6]=76,[3]=(Ab[0x3]-0X008d)};end;else local Wl=Ab[0X1];do for n2=Wl,Wl+(Ab[3]-1)do do(iG)[n2]=MG[lH+(n2-Wl)+1];end;end;end;end;else do if gb~=89 then local Pw=(Ab[3]);local Zw=Ab[1];if Pw==0 then else JG=Zw+Pw-1;end;local mw,gw=nil,(nil);local bw=Ab[0x02];do if Pw~=1 then mw,gw=CL(iG[Zw](c(iG,Zw+0X01,JG)));else do mw,gw=CL(iG[Zw]());end;end;end;if bw==0x1 then JG=Zw-1;else if bw==0x0 then do mw=mw+Zw-0X1;end;JG=mw;else mw=Zw+bw-0X2;JG=mw+0X00001;end;local FC=(0x0);do for jq=Zw,mw do FC=FC+0x00001;do(iG)[jq]=gw[FC];end;end;end;end;else if not(Ab[0X4]<=iG[Ab[0X2]])then pG=Ab[1];end;end;end;end;else if not(gb>=0X55)then do iG[Ab[1]]=qG[Ab[0X4]];end;else if gb~=0X56 then iG[Ab[1]]=iG[Ab[0X3]]==Ab[7];else do(iG[Ab[0X1]])[iG[Ab[0x003]]]=Ab[7];end;end;end;end;end;end;end;end;until false;end);if not(YG)then do if m(rG)=='s\116\114\105n\103'then if not(F(rG,"attempt to yield across metamethod/C%-call boundary"))then else return coroutine.yield();end;do if not(F(rG,"^.-:%d+: "))then(f)(rG,0X0);else(f)("\076\117\114\097\112h\032S\099\114\105\112\116\058"..(kH[pG-1]or"(internal)")..": "..P(rG),0);end;end;else f(rG,0X000);end;end;elseif rG then do if bG==0X0001 then do return iG[oG]();end;else return iG[oG](c(iG,oG+0X1,JG));end;end;else if oG then return c(iG,oG,bG);end;end;end;do if A then A(mH,bH);end;end;do return mH;end;end;Mh=0X1;else function QL()local O3,t3,g3,s3,H3,P3=0X3,nil,nil,nil,nil,(nil);do repeat if O3<=2 then do if not(O3<=0X0)then if O3~=0x1 then H3={};O3=5;else s3=h()-TL;O3=2;end;else t3={};O3=0X4;end;end;else do if O3<=0X3 then O3=0X00000;else if O3==4 then g3=1;O3=0x1;else do P3=B();end;O3=0x006;end;end;end;end;until O3>=6;end;local z3={nil,{},nil,nil,nil,{},OL,{},nil};local x3=(B()~=0);for pS=0X0001,s3 do local yS,mS,XS=nil,nil,(nil);do for nt=0,0X7 do if nt<=3 then do if not(nt<=0X1)then if nt==2 then t3[pS-0x1]=g3;else if mS==0X22 then yS=Z(YL(P3),h());elseif mS==0Xa5 then yS=Z(YL(P3),L()+h());elseif mS==0X0042 then do yS=L();end;elseif mS==0X0b9 then yS=Z(YL(P3),5);elseif mS==0XC4 then yS=a();elseif mS==179 then yS=L();elseif mS==0X0af then do yS=nL;end;elseif mS==0XB then yS=Z(YL(P3),0X0f);elseif mS==246 then yS=a();elseif mS==0X0090 then yS=NL;end;end;else if nt~=0 then mS=B();else do yS=OL;end;end;end;end;else if not(nt<=5)then do if nt~=6 then if x3 then local nv=(0X1);do while nv~=0X002 do do if nv==0 then PL=PL+1;nv=0X2;else mL[PL]=XS;nv=0;end;end;end;end;end;else do g3=g3+0X1;end;end;end;else if nt~=4 then(H3)[g3]=XS;else XS={yS,{}};end;end;end;end;end;end;do O3=0x1;end;local y3=nil;while true do if O3~=0X00000 then do z3[19]=B();end;O3=0X0;else y3=h();break;end;end;for Ez=1,y3 do local Mz=(h());local bz=h();local Pz,Cz=0,(nil);repeat if Pz~=0 then for N8=Mz,bz do do(z3[0X6])[N8]=Cz;end;end;break;else Cz=h();Pz=1;end;until false;end;local J3={};(z3)[0X0a]=B();do z3[gL]=h();end;local R3,W3,A3,c3=nil,nil,nil,(nil);for qN=0X0,0X0000d do if not(qN<=6)then do if qN<=9 then if not(qN<=0X7)then do if qN==0X0008 then do(z3)[0xb]=B();end;else z3[0X0011]=B();end;end;else z3[11]=h();end;else if qN<=0XB then if qN==0XA then do A3=B();end;else(z3)[0X5]=z(A3,hL,1)~=0;end;else if qN==12 then(z3)[4]=z(A3,JL,1)~=0x000;else c3=h()-77043;end;end;end;end;else if qN<=0X2 then if qN<=0x0 then R3=z3[2];elseif qN==0X1 then W3=h()-0X00b67b;else for TX=0X0,W3-0X1 do do R3[TX]=QL();end;end;end;else if qN<=0X4 then if qN~=0X3 then z3[0X011]=B();else(z3)[7]=N();end;else if qN~=0X5 then for vK=0X01,N()do J3[vK]={B(),N()};end;else do(z3)[hL]=J3;end;end;end;end;end;end;local m3=(z3[0X8]);for C8=0,1 do do if C8~=0 then do(z3)[bL]=h();end;else for mf=1,c3 do do m3[mf]={[2]=g(),[0x1]=g(),[0x5]=B(),[6]=N(),[4]=B(),[7]=B(),[0x3]=g()};end;end;end;end;end;(z3)[0X000013]=B();z3[IL]=B();O3=0x3;while 0.8799312134391378 do do if O3<=0X0001 then do if O3~=0 then for iI=0X1,c3 do local RI=0X0001;local qI=nil;repeat if RI==0 then for FS,xS in Hh(T)do local MS=O[xS];local aS=qI[MS];do if aS==0XA then local xH=(t3[qI[xS]]);local kH,MH=0x0001,nil;repeat do if kH~=0X0 then MH=H3[xH];kH=0;else if MH then local yY,ZY=0x01,(nil);do while yY<=0x1 do if yY==0 then ZY=MH[0X2];do yY=0X2;end;else do qI[MS]=MH[1];end;yY=0;end;end;end;(ZY)[#ZY+1]={qI,MS};end;kH=0X2;end;end;until kH>1;else if aS~=0X0001 then else(qI)[xS]=iI+qI[xS]+hL;end;end;end;end;RI=2;else qI=z3[0X8][iI];do RI=0X0;end;end;until RI==0X00002;end;do O3=0x00004;end;else z3[9]=N();O3=0X1;end;end;else if O3<=2 then(z3)[zL]=h();do O3=0X000;end;else if O3~=3 then return z3;else do(z3)[0X3]=N();end;O3=2;end;end;end;end;end;end;do Mh=2;end;end;end;else if Mh==0X2 then EL=QL();break;else Mh=0;end;end;end;end;end;do for Ra=0,1 do if Ra==0 then(fL)[JL]=mL;else mL=OL;end;end;end;local V=rawset;return ZL(EL,t,nil)(...);end)(string.byte,string.rep,6,7,"",unpack,true,17,coroutine.yield,string.gsub,0x13,"\098or",select,nil,bit,10,'rs\104\105f\116',0x05,0X9,0,setfenv,0x119F7,0XB,32,14,0X0004,2,0X8,getfenv,string,15,false,coroutine,12,_ENV,1,'l\115hi\102t',rawget,table,tostring,ipairs,3,0X00D,...);
