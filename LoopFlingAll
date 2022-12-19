@@ -743,7 +743,7 @@ wait(7)
 
 game:GetService("StarterGui"):SetCore("SendNotification", { 
 	Title = "LoopFlingAll";
-	Text = "If You Do Not Teleport Into The Sky Reset Twice And Try Again! Made By Jay_Devv819!";
+	Text = "If You Do Not Teleport Into The Sky Reset Twice And Try Again!";
 	Icon = "rbxthumb://type=Asset&id=7969699183&w=150&h=150"})
 Duration = 100;
 
