@@ -364,15 +364,15 @@ ColorSymbol(0, 255, 0)
 textrainbow()
 rainbow()
 typing(Welcome, "Whitelist Complete! Fling Script Is Now Executing!")
-typing(Checking, "LoopFlingAll Script! (R6 Only) Gui And Gui Animation Made By Jay_Devv819!")
-typing(discord, "Fling Script Made By Jay_Devv819! (If You Do Not Remove Gui Before The Fling Starts It Will Make Your Screen Glitch)")
+typing(Checking, "LoopFlingAll Script! (R6 Only) Gui And Gui Animation Made By BlackHatAttack!")
+typing(discord, "Fling Script Made By BlackHatAttack! (If You Do Not Remove Gui Before The Fling Starts It Will Make Your Screen Glitch)")
 ImgT(Button, 0)
 typing(Button.TextLabel, "Remove Gui")
 Button.MouseButton1Click:Connect(function()
     uhoh(-0.5)
     blury(blur, 0)
     Index = 0
-    print("scripted by jay_devv819")
+    print("scripted by blackhatattack")
     Devide = 0
     x = 360
     switch = false
